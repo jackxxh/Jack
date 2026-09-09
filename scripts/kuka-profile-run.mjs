@@ -26,8 +26,7 @@ if (cli.status === 0 && outputFlag >= 0 && forwarded[outputFlag + 1]) {
     const receipt = JSON.parse(fs.readFileSync(receiptPath, 'utf8'));
     const profileData = JSON.parse(fs.readFileSync(profile, 'utf8'));
     const profileSha256 = (await import('node:crypto')).default.createHash('sha256').update(fs.readFileSync(profile)).digest('hex').toUpperCase();
-    receipt.profile = { id: profileData.id, sha256: profileSha256, software: profileData.software, capabilityProbe: 'passed' };
-    fs.writeFileSync(receiptPath, JSON.stringify(receipt, null, 2) + '\n');
+    fs.writeFileSync(`${receiptPath}.profile.json`, JSON.stringify({ id: profileData.id, sha256: profileSha256, software: profileData.software, capabilityProbe: 'passed' }, null, 2) + '\n');
   }
 }
 process.exit(cli.status ?? 1);
