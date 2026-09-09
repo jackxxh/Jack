@@ -32,6 +32,23 @@ node scripts/kuka-profile-run.mjs --profile profiles/example.json krl candidate-
 
 The wrapper validates and probes first, then forwards the remaining arguments unchanged to the CLI. When the command writes a receipt, it writes a companion `.profile.json` evidence file so existing receipt verifiers remain byte-compatible. MCP clients can apply the same sequence before invoking a vendor operation.
 
+The MCP server also exposes `kuka_lab_profile_probe`. Configure any stdio-capable client with the server command from `plugins/kuka-virtual-validation/mcp-server/package.json`, then call that tool with the profile path. The tool is read-only and returns the same `Ready`-equivalent `Unverified`, `Missing`, `NotRun` and `UnsupportedPlatform` vocabulary used by the local probe.
+
+Example generic MCP client configuration:
+
+```json
+{
+  "mcpServers": {
+    "kuka-validation-lab": {
+      "command": "node",
+      "args": ["<repo>/plugins/kuka-virtual-validation/mcp-server/src/server.mjs"]
+    }
+  }
+}
+```
+
+Replace `<repo>` with the checkout path. The profile path is passed as the tool argument, so the same server works with one adapter or a combination of adapters.
+
 ## Compatibility matrix
 
 | Installed software | Usable capabilities | Evidence boundary |
