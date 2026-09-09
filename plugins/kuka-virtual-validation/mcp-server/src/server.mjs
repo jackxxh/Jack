@@ -1076,7 +1076,7 @@ export function createKukaLabServer({ invokeCli = invokeCliProcess } = {}) {
     }
   );
 
-  return server;
+  server.registerTool('kuka_lab_profile_probe',{title:'Probe Environment Profile',description:'Checks profile paths without executing vendor software.',inputSchema:z.object({profilePath:pathSchema})},async(args)=>{try{const file=assertAllowedPath(args.profilePath,'profilePath');const bytes=fs.readFileSync(file);const profile=JSON.parse(bytes.toString('utf8'));const profileSha256=crypto.createHash('sha256').update(bytes).digest('hex').toUpperCase();const checks=['kukaSim','officeLite','workVisual'].map(adapter=>{const spec=profile.software?.[adapter];if(!spec?.enabled)return{adapter,status:'NotRun',configured:false};const raw=profile.paths?.[spec.pathKey];const exists=typeof raw==='string'&&fs.existsSync(path.resolve(path.dirname(file),raw));return{adapter,status:exists?'Unverified':'Missing',configured:true,declaredVersion:spec.version??null,pathKey:spec.pathKey??null,pathExists:exists,executionVerified:false};});return{text:JSON.stringify({profileId:profile.id,profileSha256,scope:'filesystem-presence-only',checks},null,2)}}catch(error){return{isError:true,content:[{type:'text',text:error.message}]}}});  return server;
 }
 
 const mainPath = process.argv[1] ? path.resolve(process.argv[1]) : '';

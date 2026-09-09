@@ -219,9 +219,16 @@
       "source": "04_kuka_lab/plugins/kuka-virtual-validation/mcp-server/src/server.mjs",
       "target": "plugins/kuka-virtual-validation/mcp-server/src/server.mjs",
       "sourceSha256": "812d99091c3b2172c141d85891f1dfedc9a15a8be4adbe20ecf7b99ff3ac33e9",
-      "sha256": "812d99091c3b2172c141d85891f1dfedc9a15a8be4adbe20ecf7b99ff3ac33e9",
-      "bytes": 45510,
-      "transformations": []
+      "sha256": "0bd2ef1975dabce0942e444051fa4517a7f13012860f95fb3e3d3d7962823e09",
+      "bytes": 46630,
+      "transformations": [
+        {
+          "id": "profile-mcp-tool",
+          "from": "return server;",
+          "to": "profile probe registration",
+          "count": 1
+        }
+      ]
     },
     {
       "source": "04_kuka_lab/probes/kukasim/bootstrap-plugin.cs",
