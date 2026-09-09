@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>kuka-lab</AssemblyName>
+    <RootNamespace>KukaLab.Cli</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KukaLab.Core\KukaLab.Core.csproj" />
+  </ItemGroup>
+</Project>

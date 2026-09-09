@@ -1,0 +1,68 @@
+{
+  "schemaIdentity": "kuka.lab.fixture",
+  "schemaVersion": 2,
+  "fixtureId": "minimal-native-kss-no-motion-valid-v1",
+  "classification": "GoldenPath",
+  "provenance": "LabSynthetic",
+  "nativeExpectation": "CompileAccepted",
+  "nativeEvidenceStatus": "BoundedExecutionValidated",
+  "nativeEvidenceReference": "NATIVE-NOMOTION-20260907-01",
+  "executionExpectation": "BoundedVirtualExecutionExpected",
+  "motionProviderPreference": [
+    "Integrated",
+    "RCS8.7"
+  ],
+  "controllerTarget": {
+    "vendor": "KUKA",
+    "kssVersion": "8.7.8 B671",
+    "robotModel": "#KR210R2700_2 C01 FLR",
+    "robotEvidence": "ExactProfileAcceptanceP260907Final",
+    "controllerModel": "KRC5",
+    "kukaSimComponentSha256": "9307A04CC52BF70CC7D357676B80ABC1F3F3D5D452AA2AD64EC48E4A37543F33",
+    "officeLiteScope": "ExactC01OfficeLiteNativeKssExecutionNoMotion"
+  },
+  "frames": {
+    "toolNumber": 0,
+    "baseNumber": 0,
+    "loadDeclaration": "NoMotionNoLoadUse",
+    "provenance": "LabDeclared"
+  },
+  "files": [
+    {
+      "relativePath": "controller-files/LAB_NATIVE.dat",
+      "bytes": 51,
+      "sha256": "468D5940E8DE7CFD7B6ED9566D707645E2E724090CE9D526A51E71814AEB9D1C",
+      "encoding": "Ascii7Bit",
+      "lineEnding": "Lf"
+    },
+    {
+      "relativePath": "controller-files/LAB_NATIVE.src",
+      "bytes": 277,
+      "sha256": "0CEACE82F4FF76005F786EEB6250A3D2D97AB5CB6611814345D052A42B6C871F",
+      "encoding": "Ascii7Bit",
+      "lineEnding": "Lf"
+    }
+  ],
+  "correlations": [
+    {
+      "sequence": 1,
+      "operationId": "op-bounded-wait",
+      "targetId": "native-end",
+      "motionType": "WAIT",
+      "krlSymbol": "SEC",
+      "file": "controller-files/LAB_NATIVE.src",
+      "line": 10
+    }
+  ],
+  "expectedAssertions": [
+    "Native KSS accepts the exact SRC/DAT bytes without a motion-enable requirement",
+    "The program reaches End within the bounded high-level Start count",
+    "The controller transaction is removed and the V2 snapshot is restored"
+  ],
+  "expectedDiagnostic": null,
+  "safety": {
+    "classification": "VirtualOnlyNoSecrets",
+    "redactionConfirmed": true,
+    "physicalMotionAllowed": false
+  }
+}

@@ -1,0 +1,3 @@
+# Preserve imported and synthetic candidate bytes across clone and checkout.
+# Generated hashes describe exact bytes; do not apply automatic EOL conversion.
+* -text

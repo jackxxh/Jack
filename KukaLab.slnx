@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/KukaLab.Core/KukaLab.Core.csproj" />
+    <Project Path="src/KukaLab.Cli/KukaLab.Cli.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/KukaLab.Core.Tests/KukaLab.Core.Tests.csproj" />
+  </Folder>
+</Solution>

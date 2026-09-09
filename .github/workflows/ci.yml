@@ -1,0 +1,24 @@
+name: ci
+on:
+  push:
+  pull_request:
+jobs:
+  pure-logic:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.400
+      - run: dotnet restore KukaLab.slnx
+      - run: dotnet build KukaLab.slnx --no-restore --nologo
+      - run: .\tests\KukaLab.Core.Tests\bin\Debug\net8.0\KukaLab.Core.Tests.exe --no-progress
+  node-mcp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci --prefix plugins/kuka-virtual-validation/mcp-server
+      - run: node --check plugins/kuka-virtual-validation/mcp-server/src/server.mjs

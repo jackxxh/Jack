@@ -1,0 +1,25 @@
+&ACCESS RVP
+&REL 1
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+DEF LAB_OL_KR3()
+  ; KLAB fixture: isolated OfficeLite KR3 bounded execution only
+  BAS(#INITMOV,0)
+  $ADVANCE=0
+  $IPO_MODE=#BASE
+  $ORI_TYPE=#VAR
+  BAS(#TOOL,0)
+  BAS(#BASE,0)
+  $ACC.CP=1.0
+  $VEL.ORI1=100
+  $VEL.ORI2=100
+  $ACC.ORI1=100
+  $ACC.ORI2=100
+  $APO.CDIS=0
+  $APO.CPTP=0
+  BAS(#VEL_PTP,20)
+  BAS(#ACC_PTP,20)
+  PTP A_HOME
+  $VEL.CP=0.05
+  LIN_REL P_DELTA
+END

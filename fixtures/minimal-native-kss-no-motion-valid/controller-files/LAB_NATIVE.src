@@ -1,0 +1,11 @@
+&ACCESS RVP
+&REL 1
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+DEF LAB_NATIVE()
+  ; KLAB fixture: native KSS bounded execution without a motion-enable requirement
+  DECL INT KLAB_RESULT
+  KLAB_RESULT=40
+  KLAB_RESULT=KLAB_RESULT+2
+  WAIT SEC 0.05
+END

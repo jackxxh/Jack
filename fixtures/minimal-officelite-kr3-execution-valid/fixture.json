@@ -1,0 +1,78 @@
+{
+  "schemaIdentity": "kuka.lab.fixture",
+  "schemaVersion": 2,
+  "fixtureId": "minimal-officelite-kr3-execution-valid-v1",
+  "classification": "GoldenPath",
+  "provenance": "LabSynthetic",
+  "nativeExpectation": "CompileAccepted",
+  "nativeEvidenceStatus": "NotRun",
+  "nativeEvidenceReference": null,
+  "executionExpectation": "BoundedVirtualExecutionExpected",
+  "motionProviderPreference": [
+    "Integrated",
+    "RCS8.7"
+  ],
+  "controllerTarget": {
+    "vendor": "KUKA",
+    "kssVersion": "8.7.8 B671",
+    "robotModel": "#KR3R540 C4SR",
+    "robotEvidence": "IsolatedOfficeLiteProjectWP4MAndReadOnlyRuntimeState20260828",
+    "controllerModel": "KRC5_MICRO",
+    "kukaSimComponentSha256": null,
+    "officeLiteScope": "ExactIsolatedOfficeLiteKr3KssExecutionOnlyNotTargetWorkcellEvidence"
+  },
+  "frames": {
+    "toolNumber": 0,
+    "baseNumber": 0,
+    "loadDeclaration": "IsolatedOfficeLiteDefaultLoadNotRealCellEvidence",
+    "provenance": "WP4MPlusReadOnlyRuntimeState20260828"
+  },
+  "files": [
+    {
+      "relativePath": "controller-files/LAB_OL_KR3.dat",
+      "bytes": 185,
+      "sha256": "114791B043C7AE196A12E2816CC39BBA4BDC0658A92AEF1109265BBA2E9BE8B2",
+      "encoding": "Ascii7Bit",
+      "lineEnding": "Lf"
+    },
+    {
+      "relativePath": "controller-files/LAB_OL_KR3.src",
+      "bytes": 461,
+      "sha256": "D274FC1C27E94021F2FA557104DAC526D4378CC91B89CABFC101FE49CC47B300",
+      "encoding": "Ascii7Bit",
+      "lineEnding": "Lf"
+    }
+  ],
+  "correlations": [
+    {
+      "sequence": 1,
+      "operationId": "op-home",
+      "targetId": "target-home",
+      "motionType": "PTP",
+      "krlSymbol": "A_HOME",
+      "file": "controller-files/LAB_OL_KR3.src",
+      "line": 22
+    },
+    {
+      "sequence": 2,
+      "operationId": "op-relative-line",
+      "targetId": "target-relative-line",
+      "motionType": "LIN_REL",
+      "krlSymbol": "P_DELTA",
+      "file": "controller-files/LAB_OL_KR3.src",
+      "line": 24
+    }
+  ],
+  "expectedAssertions": [
+    "Controller artifacts remain byte-identical to this manifest",
+    "Native KSS accepts the fixture on the exact isolated KR3 OfficeLite profile",
+    "Bounded execution completes PTP A_HOME followed by LIN_REL P_DELTA without workspace error 1342",
+    "No result from this fixture is target KR 210 workcell or physical robot evidence"
+  ],
+  "expectedDiagnostic": null,
+  "safety": {
+    "classification": "VirtualOnlyNoSecrets",
+    "redactionConfirmed": true,
+    "physicalMotionAllowed": false
+  }
+}

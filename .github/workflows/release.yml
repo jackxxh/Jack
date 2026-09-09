@@ -1,0 +1,19 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+jobs:
+  package:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.400
+      - run: dotnet publish src/KukaLab.Cli/KukaLab.Cli.csproj -c Release -r win-x64 --self-contained true -o .release/runtime
+      - run: Compress-Archive -Path plugins, .release/runtime -DestinationPath kuka-validation-lab-${{ github.ref_name }}-windows.zip
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: kuka-validation-lab-${{ github.ref_name }}-windows.zip

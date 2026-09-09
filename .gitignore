@@ -1,0 +1,33 @@
+# Build outputs and dependency caches
+**/[Bb]in/
+**/[Oo]bj/
+**/node_modules/
+**/TestResults/
+**/coverage/
+
+# Local evidence, audit scratch space and release output
+/.local/
+/artifacts/
+/dist/
+
+# Local settings and secrets
+.env
+.env.*
+!.env.example
+*.user
+*.suo
+.vs/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Machine assets must never enter the public repository
+*.vmdk
+*.vmem
+*.vmss
+*.vmsn
+*.vmx
+*.vcmx
+*.pem
+*.key
+lservrc.dat

@@ -1,0 +1,75 @@
+{
+  "schemaIdentity": "kuka.lab.fixture",
+  "schemaVersion": 2,
+  "fixtureId": "minimal-missing-target-invalid-v1",
+  "classification": "IntentionalFailure",
+  "provenance": "LabSynthetic",
+  "nativeExpectation": "CompileRejected",
+  "nativeEvidenceStatus": "NotRun",
+  "nativeEvidenceReference": null,
+  "executionExpectation": "RejectedBeforeExecution",
+  "motionProviderPreference": [
+    "Integrated",
+    "RCS8.7"
+  ],
+  "controllerTarget": {
+    "vendor": "KUKA",
+    "kssVersion": "8.7.8 B671",
+    "robotModel": "#KR210R2700_2 C01 FLR",
+    "robotEvidence": "ControllerProjectBaselineWP4TAndExactComponentWP4V",
+    "controllerModel": "KRC5",
+    "kukaSimComponentSha256": "9717CF4C0A1FD74E8D293E4D5B0E3D90D54406181D686E69AB47D3FD84DF9C65",
+    "officeLiteScope": "GenericKssSemanticsOnlyNotExactC01Kinematics"
+  },
+  "frames": {
+    "toolNumber": 0,
+    "baseNumber": 0,
+    "loadDeclaration": "ControllerDefaultLoadNotRealCellEvidence",
+    "provenance": "LabDeclared"
+  },
+  "files": [
+    {
+      "relativePath": "controller-files/LAB_MISSING_TARGET.dat",
+      "bytes": 145,
+      "sha256": "140B95C2EE526284E532373EBFC5701A705F50612F6CBD27726036DF1EA2B431",
+      "encoding": "Ascii7Bit",
+      "lineEnding": "Lf"
+    },
+    {
+      "relativePath": "controller-files/LAB_MISSING_TARGET.src",
+      "bytes": 313,
+      "sha256": "C39DAAA3C5FC40CAF978771C31913AF25C1C5A7C3E1F3D4197D09C95F9C3CA80",
+      "encoding": "Ascii7Bit",
+      "lineEnding": "Lf"
+    }
+  ],
+  "correlations": [
+    {
+      "sequence": 1,
+      "operationId": "op-missing",
+      "targetId": "target-missing",
+      "motionType": "LIN",
+      "krlSymbol": "P_MISSING",
+      "file": "controller-files/LAB_MISSING_TARGET.src",
+      "line": 15
+    }
+  ],
+  "expectedAssertions": [
+    "Controller artifacts remain byte-identical to this manifest",
+    "The fixture begins with unresolved P_MISSING and contains no executable prefix motion",
+    "Static source correlation remains controller-files/LAB_MISSING_TARGET.src line 15",
+    "Native KSS remains NotRun for these revised bytes until a fresh exact-C01 receipt is produced"
+  ],
+  "expectedDiagnostic": {
+    "category": "UndefinedTargetReference",
+    "messageCode": "KRL030",
+    "file": "controller-files/LAB_MISSING_TARGET.src",
+    "line": 15,
+    "observationStatus": "NotRun"
+  },
+  "safety": {
+    "classification": "VirtualOnlyNoSecrets",
+    "redactionConfirmed": true,
+    "physicalMotionAllowed": false
+  }
+}

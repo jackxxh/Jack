@@ -1,0 +1,1417 @@
+{
+  "schemaVersion": 2,
+  "sourceCommit": "82875914ed984e4f78d7c282680a83653417bde0",
+  "sourceCommitRequested": "63e9ca28^",
+  "sourcePolicy": "pinned archive mechanical project closure within 04_kuka_lab",
+  "excluded": [
+    {
+      "path": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteLocalConsoleContractTests.cs",
+      "reason": "Contains private harness workflow references; stage-three public adaptation."
+    },
+    {
+      "path": "04_kuka_lab/tests/KukaLab.Core.Tests/RealControllerEndpointProbeTests.cs",
+      "reason": "Real controller endpoint topology and addresses; not portable unit data."
+    },
+    {
+      "path": "04_kuka_lab/tests/KukaLab.Core.Tests/RealControllerNetworkPreflightTests.cs",
+      "reason": "Real controller network topology and addresses; not portable unit data."
+    },
+    {
+      "path": "04_kuka_lab/tests/KukaLab.Core.Tests/WorkVisualActivationDiagnosticProbeTests.cs",
+      "reason": "Contains private harness workflow references; stage-three public adaptation."
+    }
+  ],
+  "deferred": [
+    {
+      "path": "plugins/kuka-virtual-validation/skills/kuka-virtual-validation/SKILL.md",
+      "reason": "Private workflow references; stage-three public adaptation."
+    },
+    {
+      "path": "plugins/kuka-virtual-validation/mcp-server/test",
+      "reason": "Hardcoded 05_runtime receipt paths; stage-three public adaptation."
+    }
+  ],
+  "distribution": {
+    "root build metadata": 53,
+    "plugins/kuka-virtual-validation": 5,
+    "src/KukaLab.Cli": 2,
+    "src/KukaLab.Core": 44,
+    "tests/KukaLab.Core.Tests": 38
+  },
+  "files": [
+    {
+      "source": "04_kuka_lab/Directory.Build.props",
+      "target": "Directory.Build.props",
+      "sourceSha256": "6216efb9e0e2b4ef92b0cb99c980efd263c577a65aa532bbf791153244651046",
+      "sha256": "6216efb9e0e2b4ef92b0cb99c980efd263c577a65aa532bbf791153244651046",
+      "bytes": 321,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/Directory.Packages.props",
+      "target": "Directory.Packages.props",
+      "sourceSha256": "9e57e9a0b28e992dff731cd15b02167b42a6e6eea38dcd39836dc1eb17f8aafb",
+      "sha256": "9e57e9a0b28e992dff731cd15b02167b42a6e6eea38dcd39836dc1eb17f8aafb",
+      "bytes": 234,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/KukaLab.slnx",
+      "target": "KukaLab.slnx",
+      "sourceSha256": "bc19a5f6f425adf8ca004d4807c581cdeca52eb6d9f134f4e69b99babeded86b",
+      "sha256": "bc19a5f6f425adf8ca004d4807c581cdeca52eb6d9f134f4e69b99babeded86b",
+      "bytes": 298,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-circ-spline-valid/controller-files/LAB_PATHS.dat",
+      "target": "fixtures/minimal-circ-spline-valid/controller-files/LAB_PATHS.dat",
+      "sourceSha256": "3a3a25977a903e3fcba093c48dd01e16a929cea689a0996bc51f7168216dca0b",
+      "sha256": "3a3a25977a903e3fcba093c48dd01e16a929cea689a0996bc51f7168216dca0b",
+      "bytes": 831,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-circ-spline-valid/controller-files/LAB_PATHS.src",
+      "target": "fixtures/minimal-circ-spline-valid/controller-files/LAB_PATHS.src",
+      "sourceSha256": "776827c820cda32efb9d728cab2d3e023f5d89b0f1b7cb41e5c369982e237321",
+      "sha256": "776827c820cda32efb9d728cab2d3e023f5d89b0f1b7cb41e5c369982e237321",
+      "bytes": 572,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-circ-spline-valid/fixture.json",
+      "target": "fixtures/minimal-circ-spline-valid/fixture.json",
+      "sourceSha256": "809fc75a7857adf9ac1c4da13fd54ce106d5f05bd1b7b5bc2d4a74c97e26e4c8",
+      "sha256": "809fc75a7857adf9ac1c4da13fd54ce106d5f05bd1b7b5bc2d4a74c97e26e4c8",
+      "bytes": 1917,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-missing-target-invalid/controller-files/LAB_MISSING_TARGET.dat",
+      "target": "fixtures/minimal-missing-target-invalid/controller-files/LAB_MISSING_TARGET.dat",
+      "sourceSha256": "140b95c2ee526284e532373ebfc5701a705f50612f6cbd27726036df1ea2b431",
+      "sha256": "140b95c2ee526284e532373ebfc5701a705f50612f6cbd27726036df1ea2b431",
+      "bytes": 145,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-missing-target-invalid/controller-files/LAB_MISSING_TARGET.src",
+      "target": "fixtures/minimal-missing-target-invalid/controller-files/LAB_MISSING_TARGET.src",
+      "sourceSha256": "c39daaa3c5fc40caf978771c31913af25c1c5a7c3e1f3d4197d09c95f9c3ca80",
+      "sha256": "c39daaa3c5fc40caf978771c31913af25c1c5a7c3e1f3d4197d09c95f9c3ca80",
+      "bytes": 313,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-missing-target-invalid/fixture.json",
+      "target": "fixtures/minimal-missing-target-invalid/fixture.json",
+      "sourceSha256": "35be558b92415c4b9b20d6de15ea2c4e10a31490a074ab7b3d7ceafabe225cc4",
+      "sha256": "35be558b92415c4b9b20d6de15ea2c4e10a31490a074ab7b3d7ceafabe225cc4",
+      "bytes": 2461,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-native-kss-no-motion-valid/controller-files/LAB_NATIVE.dat",
+      "target": "fixtures/minimal-native-kss-no-motion-valid/controller-files/LAB_NATIVE.dat",
+      "sourceSha256": "468d5940e8de7cfd7b6ed9566d707645e2e724090ce9d526a51e71814aeb9d1c",
+      "sha256": "468d5940e8de7cfd7b6ed9566d707645e2e724090ce9d526a51e71814aeb9d1c",
+      "bytes": 51,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-native-kss-no-motion-valid/controller-files/LAB_NATIVE.src",
+      "target": "fixtures/minimal-native-kss-no-motion-valid/controller-files/LAB_NATIVE.src",
+      "sourceSha256": "0ceace82f4ff76005f786eeb6250a3d2d97ab5cb6611814345d052a42b6c871f",
+      "sha256": "0ceace82f4ff76005f786eeb6250a3d2d97ab5cb6611814345d052a42b6c871f",
+      "bytes": 277,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-native-kss-no-motion-valid/fixture.json",
+      "target": "fixtures/minimal-native-kss-no-motion-valid/fixture.json",
+      "sourceSha256": "e890d2d95a4fa765f386871f17e12d3a65fedd2bbdf0ded590c9a3a56adbd87e",
+      "sha256": "e890d2d95a4fa765f386871f17e12d3a65fedd2bbdf0ded590c9a3a56adbd87e",
+      "bytes": 2148,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-officelite-kr3-execution-valid/controller-files/LAB_OL_KR3.dat",
+      "target": "fixtures/minimal-officelite-kr3-execution-valid/controller-files/LAB_OL_KR3.dat",
+      "sourceSha256": "114791b043c7ae196a12e2816cc39bba4bdc0658a92aef1109265bba2e9be8b2",
+      "sha256": "114791b043c7ae196a12e2816cc39bba4bdc0658a92aef1109265bba2e9be8b2",
+      "bytes": 185,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-officelite-kr3-execution-valid/controller-files/LAB_OL_KR3.src",
+      "target": "fixtures/minimal-officelite-kr3-execution-valid/controller-files/LAB_OL_KR3.src",
+      "sourceSha256": "d274fc1c27e94021f2fa557104dac526d4378cc91b89cabfc101fe49cc47b300",
+      "sha256": "d274fc1c27e94021f2fa557104dac526d4378cc91b89cabfc101fe49cc47b300",
+      "bytes": 461,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-officelite-kr3-execution-valid/fixture.json",
+      "target": "fixtures/minimal-officelite-kr3-execution-valid/fixture.json",
+      "sourceSha256": "4ffaf36b2c6cd1a92d68d977cce3c5d659933e4b4ddf4cde79afb79eeb38ce48",
+      "sha256": "4ffaf36b2c6cd1a92d68d977cce3c5d659933e4b4ddf4cde79afb79eeb38ce48",
+      "bytes": 2494,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-ptp-lin-valid/controller-files/LAB_MINIMAL.dat",
+      "target": "fixtures/minimal-ptp-lin-valid/controller-files/LAB_MINIMAL.dat",
+      "sourceSha256": "5eeb76fdc7ecb305d464b9e7d2bcd7834ef96c6dd6852dd1b03405782526502f",
+      "sha256": "5eeb76fdc7ecb305d464b9e7d2bcd7834ef96c6dd6852dd1b03405782526502f",
+      "bytes": 331,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-ptp-lin-valid/controller-files/LAB_MINIMAL.src",
+      "target": "fixtures/minimal-ptp-lin-valid/controller-files/LAB_MINIMAL.src",
+      "sourceSha256": "646d9e216e7e974badd3c88a067e9e6bbedf429d0233851c6304abd5261e07f0",
+      "sha256": "646d9e216e7e974badd3c88a067e9e6bbedf429d0233851c6304abd5261e07f0",
+      "bytes": 551,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/fixtures/minimal-ptp-lin-valid/fixture.json",
+      "target": "fixtures/minimal-ptp-lin-valid/fixture.json",
+      "sourceSha256": "b45398b0d58074350d134d76945387a0cb420d391917c3e187b320a9eff72f22",
+      "sha256": "b45398b0d58074350d134d76945387a0cb420d391917c3e187b320a9eff72f22",
+      "bytes": 2819,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/plugins/kuka-virtual-validation/.codex-plugin/plugin.json",
+      "target": "plugins/kuka-virtual-validation/.codex-plugin/plugin.json",
+      "sourceSha256": "f1d758c3a759c84d7403c461a553a49f79fe94afce4ae280e9ef4f9169843911",
+      "sha256": "f1d758c3a759c84d7403c461a553a49f79fe94afce4ae280e9ef4f9169843911",
+      "bytes": 2191,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/plugins/kuka-virtual-validation/.mcp.json",
+      "target": "plugins/kuka-virtual-validation/.mcp.json",
+      "sourceSha256": "56ee0e778b8e0bbcaf37d515ea16d727040a4ea2e27724bcd47111ff23cf5700",
+      "sha256": "56ee0e778b8e0bbcaf37d515ea16d727040a4ea2e27724bcd47111ff23cf5700",
+      "bytes": 191,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/plugins/kuka-virtual-validation/mcp-server/package-lock.json",
+      "target": "plugins/kuka-virtual-validation/mcp-server/package-lock.json",
+      "sourceSha256": "98e47e1e2c0689e4fce16cbadb7cb264d0f59d3c37f47a0b336b867da4da850f",
+      "sha256": "98e47e1e2c0689e4fce16cbadb7cb264d0f59d3c37f47a0b336b867da4da850f",
+      "bytes": 6556,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/plugins/kuka-virtual-validation/mcp-server/package.json",
+      "target": "plugins/kuka-virtual-validation/mcp-server/package.json",
+      "sourceSha256": "a0ad9514aed46359cc2a8c3f19fa348e6f3dd4cf82bda9e61e870e9e9c1ac29c",
+      "sha256": "a0ad9514aed46359cc2a8c3f19fa348e6f3dd4cf82bda9e61e870e9e9c1ac29c",
+      "bytes": 436,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/plugins/kuka-virtual-validation/mcp-server/src/server.mjs",
+      "target": "plugins/kuka-virtual-validation/mcp-server/src/server.mjs",
+      "sourceSha256": "812d99091c3b2172c141d85891f1dfedc9a15a8be4adbe20ecf7b99ff3ac33e9",
+      "sha256": "812d99091c3b2172c141d85891f1dfedc9a15a8be4adbe20ecf7b99ff3ac33e9",
+      "bytes": 45510,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/kukasim/bootstrap-plugin.cs",
+      "target": "probes/kukasim/bootstrap-plugin.cs",
+      "sourceSha256": "4b1f4012f5f4374e187022420f3846978ee4e33b4cb9af5421df34d39435d667",
+      "sha256": "4b1f4012f5f4374e187022420f3846978ee4e33b4cb9af5421df34d39435d667",
+      "bytes": 3788,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/kukasim/component-load-smoke.cs",
+      "target": "probes/kukasim/component-load-smoke.cs",
+      "sourceSha256": "102c6fe164dca1fb06c60d28aa1e844ce39716139439dbfc47d2dad66fc26553",
+      "sha256": "102c6fe164dca1fb06c60d28aa1e844ce39716139439dbfc47d2dad66fc26553",
+      "bytes": 11124,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/kukasim/exact-c01-tool-layout.cs",
+      "target": "probes/kukasim/exact-c01-tool-layout.cs",
+      "sourceSha256": "d13688134b8f8d4a471e84bb818e5389ad43d893ed2be297cd1680ae910e9184",
+      "sha256": "d13688134b8f8d4a471e84bb818e5389ad43d893ed2be297cd1680ae910e9184",
+      "bytes": 9930,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/kukasim/integrated-krl-validation.cs",
+      "target": "probes/kukasim/integrated-krl-validation.cs",
+      "sourceSha256": "fc224d22cc1dd105b93401d15add5f284a66565ad7defd76ec187f360871c0e3",
+      "sha256": "fc224d22cc1dd105b93401d15add5f284a66565ad7defd76ec187f360871c0e3",
+      "bytes": 35885,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/kukasim/officelite-virtual-loop.cs",
+      "target": "probes/kukasim/officelite-virtual-loop.cs",
+      "sourceSha256": "fdd612e4bc93ce0bbe2819d71c6aa690461b934349afeb9c8f69d6e5fa567916",
+      "sha256": "fdd612e4bc93ce0bbe2819d71c6aa690461b934349afeb9c8f69d6e5fa567916",
+      "bytes": 56579,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/README.md",
+      "target": "probes/workvisual/README.md",
+      "sourceSha256": "c7ddb54ef98d124eb3921e3275d2a766d52f0be0ae43624055ae8abdd661c260",
+      "sha256": "b8f9aeafd13539a7fa53d5388d3f27b068033f7fb5ae70c438015a70f1d8fb10",
+      "bytes": 9989,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.192.128",
+          "to": "203.0.113.128",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/active-project-download.csx",
+      "target": "probes/workvisual/active-project-download.csx",
+      "sourceSha256": "f3edbe4277e0afeedb4b0bff66ee8a7d682ac6b087d9f479e8ee7a468b022ed7",
+      "sha256": "f3edbe4277e0afeedb4b0bff66ee8a7d682ac6b087d9f479e8ee7a468b022ed7",
+      "bytes": 1174,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/authentication-lease-time-update.csx",
+      "target": "probes/workvisual/authentication-lease-time-update.csx",
+      "sourceSha256": "cf0c3ec0c91da36981341d9a61d55a034e55acff7763a6a1e2193984d38f3dec",
+      "sha256": "e0ea62a001ad93f2f267e06b5b6ca5248eeb551571b9027a226b8681f91e7555",
+      "bytes": 6763,
+      "transformations": [
+        {
+          "id": "public-evidence-dir",
+          "from": "05_runtime",
+          "to": "artifacts",
+          "count": 1
+        },
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.134",
+          "to": "198.51.100.134",
+          "count": 1
+        },
+        {
+          "id": "generic-test-user",
+          "from": "96207",
+          "to": "PUBLIC_TEST_USER",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/controller-profile-readback.csx",
+      "target": "probes/workvisual/controller-profile-readback.csx",
+      "sourceSha256": "0d139e678661ba7f3a75644b34de647f37e9a5ee59d386738205e82d6d09b095",
+      "sha256": "0d139e678661ba7f3a75644b34de647f37e9a5ee59d386738205e82d6d09b095",
+      "bytes": 1643,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/deployment-preflight.csx",
+      "target": "probes/workvisual/deployment-preflight.csx",
+      "sourceSha256": "82132fc984c618c7488bbd898fb0ea5daa6400256ebe9a4bd4a810b733b9be01",
+      "sha256": "82132fc984c618c7488bbd898fb0ea5daa6400256ebe9a4bd4a810b733b9be01",
+      "bytes": 3264,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/exact-c01-runtime-config-overlay.csx",
+      "target": "probes/workvisual/exact-c01-runtime-config-overlay.csx",
+      "sourceSha256": "40ffd6e5bef8ca5e94d8aed8b809a7e1c495bf9d45bc7fce719ba5ac1e6dd749",
+      "sha256": "40ffd6e5bef8ca5e94d8aed8b809a7e1c495bf9d45bc7fce719ba5ac1e6dd749",
+      "bytes": 2538,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/exact-c01-start-diagnostic.csx",
+      "target": "probes/workvisual/exact-c01-start-diagnostic.csx",
+      "sourceSha256": "a4ed7ceb95a3b24c31a8fd3d335a39603d630767eaf751bebc9a4769750e868d",
+      "sha256": "a4ed7ceb95a3b24c31a8fd3d335a39603d630767eaf751bebc9a4769750e868d",
+      "bytes": 5420,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/exact-c01-virtual-motion-profile.csx",
+      "target": "probes/workvisual/exact-c01-virtual-motion-profile.csx",
+      "sourceSha256": "62ac3815b28ef5da74a26b77276e60b565853c32b353f5bf2dd8c56bc88ccdfe",
+      "sha256": "62ac3815b28ef5da74a26b77276e60b565853c32b353f5bf2dd8c56bc88ccdfe",
+      "bytes": 5414,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/exact-profile-deployment.csx",
+      "target": "probes/workvisual/exact-profile-deployment.csx",
+      "sourceSha256": "8b9cd4653b45f076b6d7bc2f3743f52a82a0eebe13218236da92f6b42078cc26",
+      "sha256": "8b9cd4653b45f076b6d7bc2f3743f52a82a0eebe13218236da92f6b42078cc26",
+      "bytes": 7691,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/expert-mode-readback.csx",
+      "target": "probes/workvisual/expert-mode-readback.csx",
+      "sourceSha256": "9f46cd2d277f26b790bbe4a3f75105ddea72a08f696ea4133d295ba2bb678a01",
+      "sha256": "9f46cd2d277f26b790bbe4a3f75105ddea72a08f696ea4133d295ba2bb678a01",
+      "bytes": 1896,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/krl-native-diagnostic.csx",
+      "target": "probes/workvisual/krl-native-diagnostic.csx",
+      "sourceSha256": "5a1265b2809bb89b3a5379672ca88802e09d349f9defd653fb4ec3f8b76f8a1e",
+      "sha256": "5a1265b2809bb89b3a5379672ca88802e09d349f9defd653fb4ec3f8b76f8a1e",
+      "bytes": 9177,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/kss-bounded-execution.csx",
+      "target": "probes/workvisual/kss-bounded-execution.csx",
+      "sourceSha256": "d1bcdfab2ba8ba591fdf5bc385d0791f07ca4d0513e58bdecbaf476c8f1b0740",
+      "sha256": "d1bcdfab2ba8ba591fdf5bc385d0791f07ca4d0513e58bdecbaf476c8f1b0740",
+      "bytes": 10605,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/kss-candidate-execution.csx",
+      "target": "probes/workvisual/kss-candidate-execution.csx",
+      "sourceSha256": "df0e3f9b87145a760b2c641bf192892d5986aba885f9d12f6889ee4e0028af9e",
+      "sha256": "df0e3f9b87145a760b2c641bf192892d5986aba885f9d12f6889ee4e0028af9e",
+      "bytes": 13805,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/kss-composition-transaction.csx",
+      "target": "probes/workvisual/kss-composition-transaction.csx",
+      "sourceSha256": "f4a9c78595e2185275cff1a633b7e5e1ffa72dd937d9fd9e6f5dff4deccd6c05",
+      "sha256": "f4a9c78595e2185275cff1a633b7e5e1ffa72dd937d9fd9e6f5dff4deccd6c05",
+      "bytes": 12010,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/named-project-download.csx",
+      "target": "probes/workvisual/named-project-download.csx",
+      "sourceSha256": "edb5d3c1211523655ae7b421f826c300d5f78ae2859768f69c1fe2d432caaad0",
+      "sha256": "edb5d3c1211523655ae7b421f826c300d5f78ae2859768f69c1fe2d432caaad0",
+      "bytes": 1278,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/not-activated-project-download.csx",
+      "target": "probes/workvisual/not-activated-project-download.csx",
+      "sourceSha256": "db10f37eb83caccf68498e1496940bb73baff88f0d81d8321cab73b93f91fb41",
+      "sha256": "db10f37eb83caccf68498e1496940bb73baff88f0d81d8321cab73b93f91fb41",
+      "bytes": 1155,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/online-project-inventory.csx",
+      "target": "probes/workvisual/online-project-inventory.csx",
+      "sourceSha256": "4f0e3e475cb8cd1aa7e88906e6ec33af3adcd0a7f5eebcc54333e1b37c35342a",
+      "sha256": "4f0e3e475cb8cd1aa7e88906e6ec33af3adcd0a7f5eebcc54333e1b37c35342a",
+      "bytes": 1025,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/operation-mode-set.csx",
+      "target": "probes/workvisual/operation-mode-set.csx",
+      "sourceSha256": "f66984c43724708c6697610de68260260c6f9c4d87429b935dde71cbb0d46b3c",
+      "sha256": "f66984c43724708c6697610de68260260c6f9c4d87429b935dde71cbb0d46b3c",
+      "bytes": 1801,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/project-activation-finalize.csx",
+      "target": "probes/workvisual/project-activation-finalize.csx",
+      "sourceSha256": "bdc40a63cc1903c288423fc1dda957a99376d7c8f5c47a6412312d7a68b0f67e",
+      "sha256": "bdc40a63cc1903c288423fc1dda957a99376d7c8f5c47a6412312d7a68b0f67e",
+      "bytes": 3255,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/project-activation-phased.csx",
+      "target": "probes/workvisual/project-activation-phased.csx",
+      "sourceSha256": "88ff9a7dbb597ee2f2043564247c63faa0762cddc3ceeb4b8aa11cfead521fda",
+      "sha256": "88ff9a7dbb597ee2f2043564247c63faa0762cddc3ceeb4b8aa11cfead521fda",
+      "bytes": 7292,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/project-activation-preflight.csx",
+      "target": "probes/workvisual/project-activation-preflight.csx",
+      "sourceSha256": "5a3462f48d410697216d1aaaa052f16e12ec52430783d598cb2e96feefc88e49",
+      "sha256": "5a3462f48d410697216d1aaaa052f16e12ec52430783d598cb2e96feefc88e49",
+      "bytes": 2324,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/project-activation-prepare-diagnostic.csx",
+      "target": "probes/workvisual/project-activation-prepare-diagnostic.csx",
+      "sourceSha256": "8232831bac9fd46e826bf771b6e2a4ef5b7bd89da7e5cbc086bb7e74dd44473d",
+      "sha256": "8232831bac9fd46e826bf771b6e2a4ef5b7bd89da7e5cbc086bb7e74dd44473d",
+      "bytes": 5656,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/project-activation-rollback.csx",
+      "target": "probes/workvisual/project-activation-rollback.csx",
+      "sourceSha256": "399beab08682dcef4263a436c2b83e1811ca34f54d3a2c519494f8b1dc5f986a",
+      "sha256": "399beab08682dcef4263a436c2b83e1811ca34f54d3a2c519494f8b1dc5f986a",
+      "bytes": 3614,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/project-activation-status.csx",
+      "target": "probes/workvisual/project-activation-status.csx",
+      "sourceSha256": "78d8d5db263f0717ea77a1e272613c8e68566c50b645694b73eecf15e254d6ba",
+      "sha256": "78d8d5db263f0717ea77a1e272613c8e68566c50b645694b73eecf15e254d6ba",
+      "bytes": 2205,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/project-activation.csx",
+      "target": "probes/workvisual/project-activation.csx",
+      "sourceSha256": "ae5dee0779fdab645182f366b7aeed4b98231112e446c33d7aaa04adfc857235",
+      "sha256": "ae5dee0779fdab645182f366b7aeed4b98231112e446c33d7aaa04adfc857235",
+      "bytes": 3429,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/project-option-inventory.csx",
+      "target": "probes/workvisual/project-option-inventory.csx",
+      "sourceSha256": "61dbba3f5eced291e66beab1415f8692b01f39151c64fa55c0b7eaa994398e96",
+      "sha256": "61dbba3f5eced291e66beab1415f8692b01f39151c64fa55c0b7eaa994398e96",
+      "bytes": 4278,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/read-only-smoke.csx",
+      "target": "probes/workvisual/read-only-smoke.csx",
+      "sourceSha256": "b0dbec5d9e58e761d673202fdb24ff89c1355b384fa0ae9fc90ca8ca3d63e450",
+      "sha256": "b0dbec5d9e58e761d673202fdb24ff89c1355b384fa0ae9fc90ca8ca3d63e450",
+      "bytes": 145,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/repository-inventory.csx",
+      "target": "probes/workvisual/repository-inventory.csx",
+      "sourceSha256": "03c1b5b42a513a0998076aa141b90147791245ad6943aede4da10dc9638664ec",
+      "sha256": "03c1b5b42a513a0998076aa141b90147791245ad6943aede4da10dc9638664ec",
+      "bytes": 1656,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/probes/workvisual/runtime-message-inventory.csx",
+      "target": "probes/workvisual/runtime-message-inventory.csx",
+      "sourceSha256": "f7105b59fdbacf90b633ab5ec7d191de013702834dfe6424cdd3e3a9836fa2f4",
+      "sha256": "f7105b59fdbacf90b633ab5ec7d191de013702834dfe6424cdd3e3a9836fa2f4",
+      "bytes": 998,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Cli/KukaLab.Cli.csproj",
+      "target": "src/KukaLab.Cli/KukaLab.Cli.csproj",
+      "sourceSha256": "80bd990a057b9582d5cc1f6b4dc88ac18a194ab2784fb1366a12fd7801a85780",
+      "sha256": "80bd990a057b9582d5cc1f6b4dc88ac18a194ab2784fb1366a12fd7801a85780",
+      "bytes": 314,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Cli/Program.cs",
+      "target": "src/KukaLab.Cli/Program.cs",
+      "sourceSha256": "6ec0cf8381b27f35e21e6ff4ff876f38eadbb5aaac46a3b4e63dec0e36c6f098",
+      "sha256": "061e22356d4846d0e97411ca16c79e0f1ef879d0071d5ce75f844bb6f11b06de",
+      "bytes": 203608,
+      "transformations": [
+        {
+          "id": "portable-kuka-template-path",
+          "from": "D:/KUKA",
+          "to": "C:/kuka-validation-lab/vendor/KUKA",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/ControllerCompatibilityComparer.cs",
+      "target": "src/KukaLab.Core/ControllerCompatibilityComparer.cs",
+      "sourceSha256": "f8f9561d8f615c16549c709694888ef696debad2ce2ff2cb8e9ec56528706294",
+      "sha256": "f8f9561d8f615c16549c709694888ef696debad2ce2ff2cb8e9ec56528706294",
+      "bytes": 6285,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/ControllerObservationIntake.cs",
+      "target": "src/KukaLab.Core/ControllerObservationIntake.cs",
+      "sourceSha256": "159ac2ab1b72bf74869684ff3859847ec0ee182880c43e612abb35b973d4792f",
+      "sha256": "159ac2ab1b72bf74869684ff3859847ec0ee182880c43e612abb35b973d4792f",
+      "bytes": 21820,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/ControllerProjectBaseline.cs",
+      "target": "src/KukaLab.Core/ControllerProjectBaseline.cs",
+      "sourceSha256": "232eef357a287957c1ccffb1e04699cca803ebf8c82810d36d5f074ef1a27253",
+      "sha256": "232eef357a287957c1ccffb1e04699cca803ebf8c82810d36d5f074ef1a27253",
+      "bytes": 61256,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/EnvironmentInventory.cs",
+      "target": "src/KukaLab.Core/EnvironmentInventory.cs",
+      "sourceSha256": "d08f3694639621f5d08ec3f85a5da65e9923406f59d9b571111ef1bfb68475f7",
+      "sha256": "d08f3694639621f5d08ec3f85a5da65e9923406f59d9b571111ef1bfb68475f7",
+      "bytes": 27563,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/EnvironmentReceiptDiff.cs",
+      "target": "src/KukaLab.Core/EnvironmentReceiptDiff.cs",
+      "sourceSha256": "08685b2a1b1c957a3a986ce67ec83fb0a3f9f2163df03ef249a7995696c845e5",
+      "sha256": "08685b2a1b1c957a3a986ce67ec83fb0a3f9f2163df03ef249a7995696c845e5",
+      "bytes": 6154,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/FixtureContracts.cs",
+      "target": "src/KukaLab.Core/FixtureContracts.cs",
+      "sourceSha256": "d255a89fe9c02266f8ffcfc03e97630c7315fa5e0edb43ca24c2ae9e68d52497",
+      "sha256": "d255a89fe9c02266f8ffcfc03e97630c7315fa5e0edb43ca24c2ae9e68d52497",
+      "bytes": 8212,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/FixtureVerifier.cs",
+      "target": "src/KukaLab.Core/FixtureVerifier.cs",
+      "sourceSha256": "aca73a8b9430a62afbb5a4cf00853403907d3d2d6958dc4079018ad13ff5353c",
+      "sha256": "aca73a8b9430a62afbb5a4cf00853403907d3d2d6958dc4079018ad13ff5353c",
+      "bytes": 31963,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/HyperVOfficeLiteCycle.cs",
+      "target": "src/KukaLab.Core/HyperVOfficeLiteCycle.cs",
+      "sourceSha256": "5e2735f2d756d539a79833ffd2f05c35d120a368b534d3335fba034fcd54603a",
+      "sha256": "5e2735f2d756d539a79833ffd2f05c35d120a368b534d3335fba034fcd54603a",
+      "bytes": 53399,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/KrlStaticPreflight.cs",
+      "target": "src/KukaLab.Core/KrlStaticPreflight.cs",
+      "sourceSha256": "fd3badaf440c4a44d82de516479d5ab3457917300ee329d41734f370e6e15b80",
+      "sha256": "fd3badaf440c4a44d82de516479d5ab3457917300ee329d41734f370e6e15b80",
+      "bytes": 34326,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/KukaLab.Core.csproj",
+      "target": "src/KukaLab.Core/KukaLab.Core.csproj",
+      "sourceSha256": "075ca51d036ece3559bb91d451fd115297be48a6564b5330041c2feb9ccb9175",
+      "sha256": "075ca51d036ece3559bb91d451fd115297be48a6564b5330041c2feb9ccb9175",
+      "bytes": 3201,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/KukaSimCandidateExecution.cs",
+      "target": "src/KukaLab.Core/KukaSimCandidateExecution.cs",
+      "sourceSha256": "4a1948cd5e6c82edb8fa840535d7fec8087214f77886b68d06959ad4f254fe80",
+      "sha256": "4a1948cd5e6c82edb8fa840535d7fec8087214f77886b68d06959ad4f254fe80",
+      "bytes": 38226,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/KukaSimComponentSmoke.cs",
+      "target": "src/KukaLab.Core/KukaSimComponentSmoke.cs",
+      "sourceSha256": "3fb1370ed413317672c94b02ec06892e5b573c0bce3b2ed0a4186709aa662009",
+      "sha256": "3fb1370ed413317672c94b02ec06892e5b573c0bce3b2ed0a4186709aa662009",
+      "bytes": 82007,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/KukaSimInstallationDiscovery.cs",
+      "target": "src/KukaLab.Core/KukaSimInstallationDiscovery.cs",
+      "sourceSha256": "37f89e616c4a05aae4286ec21dc7e193d21ed1de4600db126258bfb269dbc243",
+      "sha256": "37f89e616c4a05aae4286ec21dc7e193d21ed1de4600db126258bfb269dbc243",
+      "bytes": 8441,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/KukaSimIntegratedValidation.cs",
+      "target": "src/KukaLab.Core/KukaSimIntegratedValidation.cs",
+      "sourceSha256": "242832f2aa9f33d7060076b9df819808d8aa509df4e5a2259e9f5efdf7084dd7",
+      "sha256": "242832f2aa9f33d7060076b9df819808d8aa509df4e5a2259e9f5efdf7084dd7",
+      "bytes": 63365,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/KukaSimOfficeLiteVirtualLoop.cs",
+      "target": "src/KukaLab.Core/KukaSimOfficeLiteVirtualLoop.cs",
+      "sourceSha256": "94a7707a8b65dafbc23f902e32571b8b78540ebd19f270fb7992dd00f2f78a4c",
+      "sha256": "455afca333c8e37d8934f02571076fb2aeb6c7dbd491a82404ff60fe7bf4fc54",
+      "bytes": 67670,
+      "transformations": [
+        {
+          "id": "embedded-probe-hash-refresh",
+          "from": "FA672BA4E6CC5E9408A968FC3A1FC87ED828BFAED0B31534B5C62B11A16B697F",
+          "to": "fdd612e4bc93ce0bbe2819d71c6aa690461b934349afeb9c8f69d6e5fa567916",
+          "count": 1
+        },
+        {
+          "id": "embedded-probe-hash-refresh",
+          "from": "F4A9C78595E2185275CFF1A633B7E5E1FFA72DD937D9FD9E6F5DFF4DECCD6C05",
+          "to": "f4a9c78595e2185275cff1a633b7e5e1ffa72dd937d9fd9e6f5dff4deccd6c05",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/NativeKssCandidateSubmission.cs",
+      "target": "src/KukaLab.Core/NativeKssCandidateSubmission.cs",
+      "sourceSha256": "e4dc0cfcd055ea4eafcfd0b4481c2510d877be4aef424b9fd47a6226b1be364b",
+      "sha256": "e4dc0cfcd055ea4eafcfd0b4481c2510d877be4aef424b9fd47a6226b1be364b",
+      "bytes": 5706,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteActiveProjectDownload.cs",
+      "target": "src/KukaLab.Core/OfficeLiteActiveProjectDownload.cs",
+      "sourceSha256": "ac0628ebf6ea4f7986dc914a1371a57ba6be38d2b0cee5dca22e7e8d2a501dc1",
+      "sha256": "ac0628ebf6ea4f7986dc914a1371a57ba6be38d2b0cee5dca22e7e8d2a501dc1",
+      "bytes": 39421,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteControllerProfileReadback.cs",
+      "target": "src/KukaLab.Core/OfficeLiteControllerProfileReadback.cs",
+      "sourceSha256": "5d59284acdf5d4dedb084051cc9eb7e6393c6f7b238997d4853aa8a0e544a05b",
+      "sha256": "5d59284acdf5d4dedb084051cc9eb7e6393c6f7b238997d4853aa8a0e544a05b",
+      "bytes": 34406,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteDeliveryInspection.cs",
+      "target": "src/KukaLab.Core/OfficeLiteDeliveryInspection.cs",
+      "sourceSha256": "4bd23cdd12e4adb305a68dc6e8fce0c6ad44b11231b7df903d859c8eb62db23e",
+      "sha256": "4bd23cdd12e4adb305a68dc6e8fce0c6ad44b11231b7df903d859c8eb62db23e",
+      "bytes": 28932,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteDeploymentPreflight.cs",
+      "target": "src/KukaLab.Core/OfficeLiteDeploymentPreflight.cs",
+      "sourceSha256": "28063548087dceede133274b8bf7c7bb3a2cd6bcc1d30d990c5e19280e77416d",
+      "sha256": "28063548087dceede133274b8bf7c7bb3a2cd6bcc1d30d990c5e19280e77416d",
+      "bytes": 40272,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteExactProfileAcceptance.cs",
+      "target": "src/KukaLab.Core/OfficeLiteExactProfileAcceptance.cs",
+      "sourceSha256": "f39fbae3c20678adce8e2bb828192f0796b03bcab40c092502be0d72c778f716",
+      "sha256": "f39fbae3c20678adce8e2bb828192f0796b03bcab40c092502be0d72c778f716",
+      "bytes": 31541,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteExactProfileAdmission.cs",
+      "target": "src/KukaLab.Core/OfficeLiteExactProfileAdmission.cs",
+      "sourceSha256": "f7cb75947b8485f06408bf4e9eb3ff6174a6fec44e4a73e0e2a5e24bf00d9339",
+      "sha256": "f7cb75947b8485f06408bf4e9eb3ff6174a6fec44e4a73e0e2a5e24bf00d9339",
+      "bytes": 7980,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteExpertModeInterfaceInventory.cs",
+      "target": "src/KukaLab.Core/OfficeLiteExpertModeInterfaceInventory.cs",
+      "sourceSha256": "b0fd90489cf4fb4a94194feda094fb604cb31fc5702678532a4ac44f3aa3d7c8",
+      "sha256": "b0fd90489cf4fb4a94194feda094fb604cb31fc5702678532a4ac44f3aa3d7c8",
+      "bytes": 36883,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteLifecycle.cs",
+      "target": "src/KukaLab.Core/OfficeLiteLifecycle.cs",
+      "sourceSha256": "598f7cb7adcb5c854eac253bcdac9c208e50bcd65bfd68c434ffc4ce2ef2743b",
+      "sha256": "598f7cb7adcb5c854eac253bcdac9c208e50bcd65bfd68c434ffc4ce2ef2743b",
+      "bytes": 79830,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteNativeKssCandidateExecution.cs",
+      "target": "src/KukaLab.Core/OfficeLiteNativeKssCandidateExecution.cs",
+      "sourceSha256": "958c5f691fce1e320c00f3dd51a708616c449bda8d89de9ef5865d39b2bbd366",
+      "sha256": "958c5f691fce1e320c00f3dd51a708616c449bda8d89de9ef5865d39b2bbd366",
+      "bytes": 47946,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteNativeKssDiagnostic.cs",
+      "target": "src/KukaLab.Core/OfficeLiteNativeKssDiagnostic.cs",
+      "sourceSha256": "171165c2ef81a302edd8a42164871b2c3383e913405e27624dbc3d8eb407ca56",
+      "sha256": "171165c2ef81a302edd8a42164871b2c3383e913405e27624dbc3d8eb407ca56",
+      "bytes": 46816,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteNativeKssExecution.cs",
+      "target": "src/KukaLab.Core/OfficeLiteNativeKssExecution.cs",
+      "sourceSha256": "87fcd679b1a6cc212a9a2e536f71213c284bc7759316a99d5e994ac75e2556b3",
+      "sha256": "87fcd679b1a6cc212a9a2e536f71213c284bc7759316a99d5e994ac75e2556b3",
+      "bytes": 53021,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteOnlineProjectInventory.cs",
+      "target": "src/KukaLab.Core/OfficeLiteOnlineProjectInventory.cs",
+      "sourceSha256": "db3f8e28a199dd85015f2d7dd56be78ca9f1e37e2b657750c2920af89b6c87dc",
+      "sha256": "db3f8e28a199dd85015f2d7dd56be78ca9f1e37e2b657750c2920af89b6c87dc",
+      "bytes": 31789,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteProfileClone.cs",
+      "target": "src/KukaLab.Core/OfficeLiteProfileClone.cs",
+      "sourceSha256": "4037762481162c14fdd7ea94f61c4c91f534b16b55e76f5953649d2cdeab3e97",
+      "sha256": "4037762481162c14fdd7ea94f61c4c91f534b16b55e76f5953649d2cdeab3e97",
+      "bytes": 26596,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteRepositoryInventory.cs",
+      "target": "src/KukaLab.Core/OfficeLiteRepositoryInventory.cs",
+      "sourceSha256": "e0371bfb23a10fd6320d72c8b2c8f78eaaba52a6a26f5d192a89f2f115f5f1d7",
+      "sha256": "e0371bfb23a10fd6320d72c8b2c8f78eaaba52a6a26f5d192a89f2f115f5f1d7",
+      "bytes": 36879,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfficeLiteServiceDiagnostics.cs",
+      "target": "src/KukaLab.Core/OfficeLiteServiceDiagnostics.cs",
+      "sourceSha256": "e662ea879b8727821c00249b74dea3d90983073a9c9c788f093291395fac9fce",
+      "sha256": "e662ea879b8727821c00249b74dea3d90983073a9c9c788f093291395fac9fce",
+      "bytes": 3306,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/OfflineLoopComparison.cs",
+      "target": "src/KukaLab.Core/OfflineLoopComparison.cs",
+      "sourceSha256": "dcee3dab56a4186ac0173874529d95b9552cc21ec9bbc80aaeed469e7dfd7fa6",
+      "sha256": "dcee3dab56a4186ac0173874529d95b9552cc21ec9bbc80aaeed469e7dfd7fa6",
+      "bytes": 46977,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/Properties/AssemblyInfo.cs",
+      "target": "src/KukaLab.Core/Properties/AssemblyInfo.cs",
+      "sourceSha256": "a703fe56373c9efe4ea86e228115666ab19cbaa12f9165303c4d418b8d867560",
+      "sha256": "a703fe56373c9efe4ea86e228115666ab19cbaa12f9165303c4d418b8d867560",
+      "bytes": 96,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/RawKrlCandidate.cs",
+      "target": "src/KukaLab.Core/RawKrlCandidate.cs",
+      "sourceSha256": "74681db595f247d3fce9351722cf03fc06e755e09fe67bce5e4b60cd17341fe2",
+      "sha256": "74681db595f247d3fce9351722cf03fc06e755e09fe67bce5e4b60cd17341fe2",
+      "bytes": 28429,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/RealControllerEndpointProbe.cs",
+      "target": "src/KukaLab.Core/RealControllerEndpointProbe.cs",
+      "sourceSha256": "74a97c7422561df1dcb9cfff94fd7ab44a4240415fdd0050652f9f007a1cfb85",
+      "sha256": "74a97c7422561df1dcb9cfff94fd7ab44a4240415fdd0050652f9f007a1cfb85",
+      "bytes": 47193,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/RealControllerNetworkPreflight.cs",
+      "target": "src/KukaLab.Core/RealControllerNetworkPreflight.cs",
+      "sourceSha256": "6211990ef238126aedc4eb393212aae801738ede7d9cd811e18ce4795e90ef6b",
+      "sha256": "6211990ef238126aedc4eb393212aae801738ede7d9cd811e18ce4795e90ef6b",
+      "bytes": 28253,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/ReceiptSerialization.cs",
+      "target": "src/KukaLab.Core/ReceiptSerialization.cs",
+      "sourceSha256": "d0439556930dde0577d030e81eb0844139a2b4d2297e11088bba9773b1483670",
+      "sha256": "d0439556930dde0577d030e81eb0844139a2b4d2297e11088bba9773b1483670",
+      "bytes": 43044,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/StageOneEvidenceBundle.cs",
+      "target": "src/KukaLab.Core/StageOneEvidenceBundle.cs",
+      "sourceSha256": "f4a5453545779d0db55abed4a0a3dbe2f5e91f32272ae2ff41520a9dccb32751",
+      "sha256": "f4a5453545779d0db55abed4a0a3dbe2f5e91f32272ae2ff41520a9dccb32751",
+      "bytes": 34409,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/ValidationPackageContracts.cs",
+      "target": "src/KukaLab.Core/ValidationPackageContracts.cs",
+      "sourceSha256": "d4fead0ba0394158896445c002b6260372ad56a3dd4bce3423987d41bbc31d67",
+      "sha256": "d4fead0ba0394158896445c002b6260372ad56a3dd4bce3423987d41bbc31d67",
+      "bytes": 8431,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/ValidationPackageVerifier.cs",
+      "target": "src/KukaLab.Core/ValidationPackageVerifier.cs",
+      "sourceSha256": "70e53ae3e0152e262181493e000bcbb6c9eac1076c939d60ee9a38edf6f7600f",
+      "sha256": "70e53ae3e0152e262181493e000bcbb6c9eac1076c939d60ee9a38edf6f7600f",
+      "bytes": 45539,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/WorkVisualInterfaceInventory.cs",
+      "target": "src/KukaLab.Core/WorkVisualInterfaceInventory.cs",
+      "sourceSha256": "7865309b37e81cf60ddadd5bb031414fad3a7508282d3848e1bb710ffc43a461",
+      "sha256": "7865309b37e81cf60ddadd5bb031414fad3a7508282d3848e1bb710ffc43a461",
+      "bytes": 41348,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/WorkVisualProjectExtraction.cs",
+      "target": "src/KukaLab.Core/WorkVisualProjectExtraction.cs",
+      "sourceSha256": "6d932737f9059101068039cdf110333002be7cc836ace4eaa4e8a5baa2e53ea6",
+      "sha256": "6d932737f9059101068039cdf110333002be7cc836ace4eaa4e8a5baa2e53ea6",
+      "bytes": 53926,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/WorkVisualProjectIntake.cs",
+      "target": "src/KukaLab.Core/WorkVisualProjectIntake.cs",
+      "sourceSha256": "250de848bee14130b5cb8f70c1d5c230a391d7f71d75d565ee342d3954bc0251",
+      "sha256": "250de848bee14130b5cb8f70c1d5c230a391d7f71d75d565ee342d3954bc0251",
+      "bytes": 23704,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/src/KukaLab.Core/WorkVisualRunnerSmoke.cs",
+      "target": "src/KukaLab.Core/WorkVisualRunnerSmoke.cs",
+      "sourceSha256": "beacc6cc056a19ee6bdfabd6f1cb923226838cd0161d3ec52279caf3952d5afe",
+      "sha256": "beacc6cc056a19ee6bdfabd6f1cb923226838cd0161d3ec52279caf3952d5afe",
+      "bytes": 33976,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/ControllerObservationTests.cs",
+      "target": "tests/KukaLab.Core.Tests/ControllerObservationTests.cs",
+      "sourceSha256": "e06d9a70fda9db54927b64bb016db2dce5855b1045c868a342bca07316ca9a1f",
+      "sha256": "a6f23c641371a82c7295cb9f133b9fe297dc803e34a7cecc178829937f442b37",
+      "bytes": 7261,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.1.147",
+          "to": "192.0.2.147",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/ControllerProjectBaselineTests.cs",
+      "target": "tests/KukaLab.Core.Tests/ControllerProjectBaselineTests.cs",
+      "sourceSha256": "3f6735a05c7bbd647d0e6a0ec91b15505efb7e8947ef69d484ab6b7cd5a786cf",
+      "sha256": "8a3062015c8bc6ea6172b8e4bc2224e04e4eb3137bed1f33a6986038aab73948",
+      "bytes": 19026,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.1.147",
+          "to": "192.0.2.147",
+          "count": 2
+        },
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.1.99",
+          "to": "192.0.2.99",
+          "count": 1
+        },
+        {
+          "id": "rfc5737-test-network",
+          "from": "172.30.1",
+          "to": "203.0.113.1",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/EnvironmentInventoryTests.cs",
+      "target": "tests/KukaLab.Core.Tests/EnvironmentInventoryTests.cs",
+      "sourceSha256": "23ae5327bfffdf16c094a3dcbe694e9e2b0f5dafd0406809f4928a007808a6a2",
+      "sha256": "23ae5327bfffdf16c094a3dcbe694e9e2b0f5dafd0406809f4928a007808a6a2",
+      "bytes": 13689,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/ExactProfileDeploymentScriptContractTests.cs",
+      "target": "tests/KukaLab.Core.Tests/ExactProfileDeploymentScriptContractTests.cs",
+      "sourceSha256": "765b92f035ade194207de73df5949a8b98f981c4aa90f1006748145123dce435",
+      "sha256": "765b92f035ade194207de73df5949a8b98f981c4aa90f1006748145123dce435",
+      "bytes": 4077,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/FixtureVerifierTests.cs",
+      "target": "tests/KukaLab.Core.Tests/FixtureVerifierTests.cs",
+      "sourceSha256": "3cdb2c0c31784d47fa6c7171e55ae2907dd7b1ef9ae11782537720549fd95283",
+      "sha256": "3cdb2c0c31784d47fa6c7171e55ae2907dd7b1ef9ae11782537720549fd95283",
+      "bytes": 14500,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/HyperVOfficeLiteCycleTests.cs",
+      "target": "tests/KukaLab.Core.Tests/HyperVOfficeLiteCycleTests.cs",
+      "sourceSha256": "f54ab1c6278276985126eb0b8f07753fd9884364e1f01dda98764668cd369fe0",
+      "sha256": "713f7749d3e9e300d4a7874f2712f4e214e576f053315970893c9436d8e784c6",
+      "bytes": 20896,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.192.128",
+          "to": "203.0.113.128",
+          "count": 2
+        },
+        {
+          "id": "generic-test-user",
+          "from": "96207",
+          "to": "PUBLIC_TEST_USER",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/KrlStaticPreflightTests.cs",
+      "target": "tests/KukaLab.Core.Tests/KrlStaticPreflightTests.cs",
+      "sourceSha256": "a08473abdf518f0b50e65f4c23bfd9f86a7c03a6e4707109a48563d75f131220",
+      "sha256": "f305cd0a9bbf77a8da915d3b6d43eabe9b0c4ac983854674fae7af6589d3eae8",
+      "bytes": 17191,
+      "transformations": [
+        {
+          "id": "public-fixture-path",
+          "from": "\"04_kuka_lab\", \"fixtures\"",
+          "to": "\"fixtures\"",
+          "count": 1
+        },
+        {
+          "id": "public-fixture-root-sentinel",
+          "from": "Directory.Exists(Path.Combine(current.FullName, \"04_kuka_lab\"))",
+          "to": "File.Exists(Path.Combine(current.FullName, \"KukaLab.slnx\"))",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/KukaLab.Core.Tests.csproj",
+      "target": "tests/KukaLab.Core.Tests/KukaLab.Core.Tests.csproj",
+      "sourceSha256": "2e7ddca04daf9d53cb86ec6a96244adaa0f03d5c636478b97b0c55ae7d6e4eb3",
+      "sha256": "2e7ddca04daf9d53cb86ec6a96244adaa0f03d5c636478b97b0c55ae7d6e4eb3",
+      "bytes": 545,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/KukaSimCandidateExecutionTests.cs",
+      "target": "tests/KukaLab.Core.Tests/KukaSimCandidateExecutionTests.cs",
+      "sourceSha256": "e67edd83544105656da7260fec0833f6c7cdc3ad73e535027d8427a5c8e78438",
+      "sha256": "e67edd83544105656da7260fec0833f6c7cdc3ad73e535027d8427a5c8e78438",
+      "bytes": 15722,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/KukaSimComponentSmokeTests.cs",
+      "target": "tests/KukaLab.Core.Tests/KukaSimComponentSmokeTests.cs",
+      "sourceSha256": "a0d479708dc33caa04390f38fea9eb1ef98db2aa873283b4e252e979b441e45b",
+      "sha256": "a2fc430d8165cf9d5610ffe9dd588aef1a398c456cdd9dde0a982c917033cf57",
+      "bytes": 26752,
+      "transformations": [
+        {
+          "id": "portable-kuka-template-path",
+          "from": "D:/KUKA",
+          "to": "C:/kuka-validation-lab/vendor/KUKA",
+          "count": 4
+        },
+        {
+          "id": "portable-kuka-template-path",
+          "from": "C:/Users/Public/Documents/KUKA",
+          "to": "C:/kuka-validation-lab/vendor/KUKA.Sim-4.10",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/KukaSimInstallationDiscoveryTests.cs",
+      "target": "tests/KukaLab.Core.Tests/KukaSimInstallationDiscoveryTests.cs",
+      "sourceSha256": "265d5981373b0e06c6823373f3430b79cd4cdb38b8705ce93d02d1c5696f5821",
+      "sha256": "265d5981373b0e06c6823373f3430b79cd4cdb38b8705ce93d02d1c5696f5821",
+      "bytes": 6355,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/KukaSimIntegratedValidationTests.cs",
+      "target": "tests/KukaLab.Core.Tests/KukaSimIntegratedValidationTests.cs",
+      "sourceSha256": "0aae0b1646d0540c0da6d4ddd024166d9a504a1660a2623cca6f716f593ae22f",
+      "sha256": "0aae0b1646d0540c0da6d4ddd024166d9a504a1660a2623cca6f716f593ae22f",
+      "bytes": 15524,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/KukaSimOfficeLiteVirtualLoopTests.cs",
+      "target": "tests/KukaLab.Core.Tests/KukaSimOfficeLiteVirtualLoopTests.cs",
+      "sourceSha256": "b7927d046067a5e1de2b3cca99b6cb33d620dc1caf3e9713c7d0108c1d4f0632",
+      "sha256": "5cdfa4b6016c0ac1f8e371758f1c064d84ba23115684e964375c0a6ce673c120",
+      "bytes": 32710,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/NativeKssCandidateSubmissionTests.cs",
+      "target": "tests/KukaLab.Core.Tests/NativeKssCandidateSubmissionTests.cs",
+      "sourceSha256": "9fcffd0e71c21d01a98f7a74cfa084b07755333c2c7b812f1593a91abe124778",
+      "sha256": "9fcffd0e71c21d01a98f7a74cfa084b07755333c2c7b812f1593a91abe124778",
+      "bytes": 3179,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteActiveProjectDownloadTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteActiveProjectDownloadTests.cs",
+      "sourceSha256": "0573aac0350704af0610e780be1d0607ba9f207ece843061a2a0364aa48a025a",
+      "sha256": "1a13da59021c905b72ead5c6762a1bba656b3a71cb69f875c480aa205c915fb9",
+      "bytes": 15570,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.1.147",
+          "to": "192.0.2.147",
+          "count": 1
+        },
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteControllerProfileReadbackTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteControllerProfileReadbackTests.cs",
+      "sourceSha256": "e61d34870de6a24330b0d7e942109297bd33fb8ab78a59d19e5ad91ae04f7797",
+      "sha256": "29810055365db8821a0e8a4d5911156f404e2c07df446fd96dcb74da5e54fbe3",
+      "bytes": 11794,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteDeliveryInspectionTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteDeliveryInspectionTests.cs",
+      "sourceSha256": "d02a521466d5651433d9d99d6924e748198376e36bcec0a4a6e06ab483805cf8",
+      "sha256": "d02a521466d5651433d9d99d6924e748198376e36bcec0a4a6e06ab483805cf8",
+      "bytes": 8407,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteDeploymentPreflightTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteDeploymentPreflightTests.cs",
+      "sourceSha256": "f508fa08ab804ee92e2ae87879dda7d8ef5109bf307b8e76ca3f0882923f2e03",
+      "sha256": "82c562a219ced27d7608049e74f2fa81071f072645e969de4961c211d374522d",
+      "bytes": 15439,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.1.147",
+          "to": "192.0.2.147",
+          "count": 1
+        },
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteExactProfileAcceptanceTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteExactProfileAcceptanceTests.cs",
+      "sourceSha256": "b980d4d8ddd1fa4414cc3e923a8384ddc4e38a06d2c08b1e6bd12e572c4ee67a",
+      "sha256": "2b0989b1d879296d3427e13cd29976f4a57f0b9f4d9ed1caba2c39c7d7f9cfe7",
+      "bytes": 23502,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.140",
+          "to": "198.51.100.140",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteExactProfileAdmissionTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteExactProfileAdmissionTests.cs",
+      "sourceSha256": "12b14d29002370ce3f3b9348f36d0c61add2af58e0a7184a6acdcb38e02e8e2b",
+      "sha256": "12b14d29002370ce3f3b9348f36d0c61add2af58e0a7184a6acdcb38e02e8e2b",
+      "bytes": 9397,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteExpertModeInterfaceInventoryTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteExpertModeInterfaceInventoryTests.cs",
+      "sourceSha256": "5651c4d2f2ba16b770d3e2fa53a3b877282e24e31de7ad781c295e1b80ee8fe1",
+      "sha256": "5651c4d2f2ba16b770d3e2fa53a3b877282e24e31de7ad781c295e1b80ee8fe1",
+      "bytes": 12436,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteLifecycleTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteLifecycleTests.cs",
+      "sourceSha256": "5861caf3d948d26bc8905100b2de6a3e67c41c3dbdc7efc6ced8eef7f3b0d2a4",
+      "sha256": "09e228e7cdb938811849b04d9d7de104de97540042b31b4ff0db2ea7a33ec07e",
+      "bytes": 35324,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.137",
+          "to": "198.51.100.137",
+          "count": 2
+        },
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.134",
+          "to": "198.51.100.134",
+          "count": 1
+        },
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 1
+        },
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.192.128",
+          "to": "203.0.113.128",
+          "count": 4
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteNativeKssCandidateExecutionTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteNativeKssCandidateExecutionTests.cs",
+      "sourceSha256": "cbf585ce9640ea1036fc0354896537210f720d416c72c13a7230c6a557fe4f91",
+      "sha256": "bdf0f6d338d87c4fcabc7e746b4165296e4fc17eabae9fb7cf2a16e667b9f5b7",
+      "bytes": 26102,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteNativeKssDiagnosticTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteNativeKssDiagnosticTests.cs",
+      "sourceSha256": "fb23ef5a94c44eff4e0ee119c07f423695505a348216a86f642766e4c1460647",
+      "sha256": "49f1c4d55f1beed6572be959d12333ceb95374f2d6c27b78ca3cd61416a5a374",
+      "bytes": 17223,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteNativeKssExecutionTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteNativeKssExecutionTests.cs",
+      "sourceSha256": "0b1b3cc446455f46748fe42d783e37e40e06237f7f2d670a093d16de09205e15",
+      "sha256": "c33832782439c4e52d47742a391a6f7faf2a45b7b502f953917c117a4b086690",
+      "bytes": 17126,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteOnlineProjectInventoryTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteOnlineProjectInventoryTests.cs",
+      "sourceSha256": "0c9669784d27a57e9b22da635cbf376644cd8a91ce4c709b9e5490047b1b60e1",
+      "sha256": "dac0383e5f92de9c5c3885f5ea5f620dea9b111379050a1e90315978f79b213b",
+      "bytes": 13644,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteProfileCloneTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteProfileCloneTests.cs",
+      "sourceSha256": "198d75c5e2e63e429e0ac32dd4b09df09ebd7bcbc28b0765243978a1da3cf81b",
+      "sha256": "198d75c5e2e63e429e0ac32dd4b09df09ebd7bcbc28b0765243978a1da3cf81b",
+      "bytes": 8106,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfficeLiteRepositoryInventoryTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfficeLiteRepositoryInventoryTests.cs",
+      "sourceSha256": "a7c0e7e782768402356017fa7d0d4d1a5f1c4b0bc542961a65968eb1a8ab56af",
+      "sha256": "9e77047aa9b5cd31d400e0e79592b2d0b06db4ed617fefb9b8ab589c60272cfa",
+      "bytes": 12799,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.198.128",
+          "to": "198.51.100.128",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/OfflineLoopComparisonTests.cs",
+      "target": "tests/KukaLab.Core.Tests/OfflineLoopComparisonTests.cs",
+      "sourceSha256": "3a2f4f1fe5dc1c0f23e6c1712b83e60890bee39f2a1e254d000ddcbc30c576be",
+      "sha256": "3a2f4f1fe5dc1c0f23e6c1712b83e60890bee39f2a1e254d000ddcbc30c576be",
+      "bytes": 10384,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/ProjectActivationRollbackScriptContractTests.cs",
+      "target": "tests/KukaLab.Core.Tests/ProjectActivationRollbackScriptContractTests.cs",
+      "sourceSha256": "f3c2daf41b6df611655bc211cfa24fafae1bf0f7943a61b524e50a54a5013bbc",
+      "sha256": "f3c2daf41b6df611655bc211cfa24fafae1bf0f7943a61b524e50a54a5013bbc",
+      "bytes": 1629,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/ProjectOptionInventoryScriptContractTests.cs",
+      "target": "tests/KukaLab.Core.Tests/ProjectOptionInventoryScriptContractTests.cs",
+      "sourceSha256": "3b09ffe9f455f1e84cd4d4b769a4099d7cad7b47833ba4414e204f7e9611ea9e",
+      "sha256": "3b09ffe9f455f1e84cd4d4b769a4099d7cad7b47833ba4414e204f7e9611ea9e",
+      "bytes": 1870,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/RawKrlCandidateTests.cs",
+      "target": "tests/KukaLab.Core.Tests/RawKrlCandidateTests.cs",
+      "sourceSha256": "10256593895519d4fe2ee66790cd0416e34e62c00f0f6ef10333a3188f864c90",
+      "sha256": "10256593895519d4fe2ee66790cd0416e34e62c00f0f6ef10333a3188f864c90",
+      "bytes": 7343,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/StageOneEvidenceBundleTests.cs",
+      "target": "tests/KukaLab.Core.Tests/StageOneEvidenceBundleTests.cs",
+      "sourceSha256": "774cab77a1bc0b0a99d3bfc5c4781a5e295880d1a60e5a484bac6060ab7b6f4b",
+      "sha256": "774cab77a1bc0b0a99d3bfc5c4781a5e295880d1a60e5a484bac6060ab7b6f4b",
+      "bytes": 10651,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/ValidationPackageVerifierTests.cs",
+      "target": "tests/KukaLab.Core.Tests/ValidationPackageVerifierTests.cs",
+      "sourceSha256": "67429f05d72d7fc0cb1f5890340db429b48b06a636871ad09ead9240391e7345",
+      "sha256": "6f24803e6aece22ff81610039e1647e3c01db26439b9ff4cd4401bd64e94e188",
+      "bytes": 19678,
+      "transformations": [
+        {
+          "id": "rfc5737-test-network",
+          "from": "192.168.1.147",
+          "to": "192.0.2.147",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/WorkVisualInterfaceInventoryTests.cs",
+      "target": "tests/KukaLab.Core.Tests/WorkVisualInterfaceInventoryTests.cs",
+      "sourceSha256": "f547b0e01d52c132fa830895178264fab06ae211301d34a81e3807a50a309bdd",
+      "sha256": "f547b0e01d52c132fa830895178264fab06ae211301d34a81e3807a50a309bdd",
+      "bytes": 10939,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/WorkVisualProjectExtractionTests.cs",
+      "target": "tests/KukaLab.Core.Tests/WorkVisualProjectExtractionTests.cs",
+      "sourceSha256": "d541f7dddae5eddaa7d0ba7b5ed84eddd09c62140f0005d9b2841cbd54f1b39e",
+      "sha256": "d541f7dddae5eddaa7d0ba7b5ed84eddd09c62140f0005d9b2841cbd54f1b39e",
+      "bytes": 19200,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/WorkVisualProjectIntakeTests.cs",
+      "target": "tests/KukaLab.Core.Tests/WorkVisualProjectIntakeTests.cs",
+      "sourceSha256": "d9cfba68cf80af69093048d0cb140803f242d14bab145c127560d86a09a56f1d",
+      "sha256": "d9cfba68cf80af69093048d0cb140803f242d14bab145c127560d86a09a56f1d",
+      "bytes": 9896,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tests/KukaLab.Core.Tests/WorkVisualRunnerSmokeTests.cs",
+      "target": "tests/KukaLab.Core.Tests/WorkVisualRunnerSmokeTests.cs",
+      "sourceSha256": "f4fcc1c3dac86b823356720975438462e2917686b5221e05cd6524d41c874e31",
+      "sha256": "f4fcc1c3dac86b823356720975438462e2917686b5221e05cd6524d41c874e31",
+      "bytes": 13791,
+      "transformations": []
+    },
+    {
+      "source": "04_kuka_lab/tools/exact-c01-official-loop.ps1",
+      "target": "tools/exact-c01-official-loop.ps1",
+      "sourceSha256": "f9183f1d71fe7ecd1c695bb7f38f5e61cdb25ba0dc69c9d79eb89e8cb4869606",
+      "sha256": "fa02a22ce0c45ea47cfca96960195210d7832343552cacf93bb2916ee9d0bd53",
+      "bytes": 8543,
+      "transformations": [
+        {
+          "id": "public-evidence-dir",
+          "from": "05_runtime",
+          "to": "artifacts",
+          "count": 2
+        },
+        {
+          "id": "portable-kuka-template-path",
+          "from": "D:/KUKA",
+          "to": "C:/kuka-validation-lab/vendor/KUKA",
+          "count": 2
+        }
+      ]
+    }
+  ]
+}

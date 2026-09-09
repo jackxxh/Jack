@@ -1,0 +1,16 @@
+&ACCESS RVP
+&REL 1
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+DEF LAB_MISSING_TARGET()
+  ; KLAB fixture: intentional unresolved target
+  BAS(#INITMOV,0)
+  $ADVANCE=3
+  $IPO_MODE=#BASE
+  BAS(#TOOL,0)
+  BAS(#BASE,0)
+  BAS(#VEL_PTP,20)
+  BAS(#ACC_PTP,20)
+  $VEL.CP=0.1
+  LIN P_MISSING
+END

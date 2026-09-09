@@ -1,0 +1,49 @@
+{
+  "name": "kuka-virtual-validation",
+  "version": "0.12.0",
+  "description": "Compose and verify file-based robotics evidence through the isolated KUKA Validation Lab.",
+  "author": {
+    "name": "Adjust Robotics Lab"
+  },
+  "keywords": [
+    "kuka",
+    "rhino",
+    "robotics",
+    "validation",
+    "krl"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "KUKA Virtual Validation",
+    "shortDescription": "Validate robotics artifacts with isolated KUKA Lab evidence.",
+    "longDescription": "Accepts raw SRC/DAT or an already-produced ValidationPackage through an isolated file boundary, verifies identities and static readiness, and can execute a hash-bound candidate in exact-C01 OfficeLite native KSS or KUKA.Sim. Native execution requires a current exact-profile receipt and restores the disposable clone snapshot; simulation captures joint/TCP evidence or an interpreter rejection. It also composes Stage-One evidence and verifies immutable receipts without invoking or changing Rhino.",
+    "developerName": "Adjust Robotics Lab",
+    "category": "Productivity",
+    "capabilities": [
+      "Raw KRL candidate intake",
+      "Exact-C01 OfficeLite native KSS candidate execution",
+      "Native KSS diagnostic capture",
+      "Exact profile receipt verification",
+      "Exact-C01 KUKA.Sim candidate execution",
+      "Joint/TCP trace capture",
+      "Integrated interpreter rejection",
+      "ValidationPackage file intake",
+      "Controller evidence intake",
+      "ValidationPackage integrity",
+      "Static KRL preflight",
+      "WorkVisual interface inventory",
+      "OfficeLite project inventory",
+      "Controller compatibility comparison",
+      "Stage-One evidence composition",
+      "Virtual-loop receipt verification",
+      "Local validation",
+      "Receipt verification"
+    ],
+    "defaultPrompt": [
+      "Compose a Stage-One receipt for this robotics candidate.",
+      "Compare this ValidationPackage target with the verified controller observation.",
+      "Run and verify this hash-bound KRL candidate through exact-C01 native KSS and KUKA.Sim."
+    ]
+  },
+  "mcpServers": "./.mcp.json"
+}

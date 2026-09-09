@@ -1,0 +1,4 @@
+DEF DEMO()
+  BAS(#INITMOV,0)
+  WAIT SEC 0
+END

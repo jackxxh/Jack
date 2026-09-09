@@ -1,0 +1,67 @@
+{
+  "schemaIdentity": "kuka.lab.fixture",
+  "schemaVersion": 1,
+  "fixtureId": "minimal-circ-spline-valid-v1",
+  "classification": "GoldenPath",
+  "provenance": "LabSynthetic",
+  "nativeExpectation": "CompileAccepted",
+  "controllerTarget": {
+    "vendor": "KUKA",
+    "kssVersion": "8.7.8",
+    "robotModel": "KR 210 R2700-2",
+    "robotEvidence": "DeclaredTargetNotMachineTruth",
+    "controllerModel": "KR C5"
+  },
+  "frames": {
+    "toolNumber": 0,
+    "baseNumber": 0,
+    "loadDeclaration": "ControllerDefaultLoadNotRealCellEvidence",
+    "provenance": "LabDeclared"
+  },
+  "files": [
+    {
+      "relativePath": "controller-files/LAB_PATHS.dat",
+      "bytes": 831,
+      "sha256": "3A3A25977A903E3FCBA093C48DD01E16A929CEA689A0996BC51F7168216DCA0B"
+    },
+    {
+      "relativePath": "controller-files/LAB_PATHS.src",
+      "bytes": 572,
+      "sha256": "776827C820CDA32EFB9D728CAB2D3E023F5D89B0F1B7CB41E5C369982E237321"
+    }
+  ],
+  "correlations": [
+    {
+      "operationId": "op-home",
+      "targetId": "target-home",
+      "motionType": "PTP",
+      "file": "controller-files/LAB_PATHS.src",
+      "line": 22
+    },
+    {
+      "operationId": "op-circle",
+      "targetId": "target-arc-end",
+      "motionType": "CIRC",
+      "file": "controller-files/LAB_PATHS.src",
+      "line": 25
+    },
+    {
+      "operationId": "op-spline",
+      "targetId": "target-spline-end",
+      "motionType": "SPLINE",
+      "file": "controller-files/LAB_PATHS.src",
+      "line": 26
+    }
+  ],
+  "expectedAssertions": [
+    "Controller artifacts remain byte-identical to this manifest",
+    "Static preflight accepts one CIRC and a balanced CP SPLINE block",
+    "Native KSS acceptance remains pending until OfficeLite execution records exact messages"
+  ],
+  "expectedDiagnostic": null,
+  "safety": {
+    "classification": "VirtualOnlyNoSecrets",
+    "redactionConfirmed": true,
+    "physicalMotionAllowed": false
+  }
+}

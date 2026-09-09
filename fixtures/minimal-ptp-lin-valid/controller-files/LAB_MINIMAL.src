@@ -1,0 +1,28 @@
+&ACCESS RVP
+&REL 1
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+DEF LAB_MINIMAL()
+  ; KLAB fixture: synthetic virtual-only PTP + LIN seed
+  BAS(#INITMOV,0)
+  $ADVANCE=3
+  $IPO_MODE=#BASE
+  $ORI_TYPE=#VAR
+  BAS(#TOOL,0)
+  BAS(#BASE,0)
+  $ACC.CP=1.0
+  $VEL.ORI1=100
+  $VEL.ORI2=100
+  $ACC.ORI1=100
+  $ACC.ORI2=100
+  $APO.CDIS=0
+  $APO.CPTP=0
+  BAS(#VEL_PTP,100)
+  BAS(#ACC_PTP,100)
+  ; Neutral BCO target: preserve the controller's current axis position.
+  PTP $AXIS_ACT
+  PTP A_HOME
+  PTP P_START
+  $VEL.CP=0.5
+  LIN P_END
+END

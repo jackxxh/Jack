@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <AssemblyName>KukaLab.Core</AssemblyName>
+    <RootNamespace>KukaLab.Core</RootNamespace>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\probes\kukasim\bootstrap-plugin.cs"
+                      LogicalName="KukaLab.Probes.KukaSim.BootstrapPlugin.cs" />
+    <EmbeddedResource Include="..\..\probes\kukasim\component-load-smoke.cs"
+                      LogicalName="KukaLab.Probes.KukaSim.ComponentLoadSmoke.cs" />
+    <EmbeddedResource Include="..\..\probes\kukasim\integrated-krl-validation.cs"
+                      LogicalName="KukaLab.Probes.KukaSim.IntegratedKrlValidation.cs" />
+    <EmbeddedResource Include="..\..\probes\kukasim\officelite-virtual-loop.cs"
+                      LogicalName="KukaLab.Probes.KukaSim.OfficeLiteVirtualLoop.cs" />
+    <EmbeddedResource Include="..\..\probes\workvisual\read-only-smoke.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.ReadOnlySmoke.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\online-project-inventory.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.OnlineProjectInventory.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\controller-profile-readback.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.ControllerProfileReadback.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\active-project-download.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.ActiveProjectDownload.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\repository-inventory.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.RepositoryInventory.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\krl-native-diagnostic.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.KrlNativeDiagnostic.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\kss-bounded-execution.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.KssBoundedExecution.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\kss-candidate-execution.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.KssCandidateExecution.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\kss-composition-transaction.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.KssCompositionTransaction.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\deployment-preflight.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.DeploymentPreflight.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\exact-profile-deployment.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.ExactProfileDeployment.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\project-option-inventory.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.ProjectOptionInventory.csx" />
+    <EmbeddedResource Include="..\..\probes\workvisual\project-activation-rollback.csx"
+                      LogicalName="KukaLab.Probes.WorkVisual.ProjectActivationRollback.csx" />
+  </ItemGroup>
+</Project>

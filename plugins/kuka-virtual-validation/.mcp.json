@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "kuka-validation-lab": {
+      "command": "node",
+      "args": ["./mcp-server/src/server.mjs"],
+      "cwd": ".",
+      "tool_timeout_sec": 900
+    }
+  }
+}

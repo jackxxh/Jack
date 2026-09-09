@@ -1,0 +1,88 @@
+{
+  "schemaIdentity": "kuka.lab.fixture",
+  "schemaVersion": 2,
+  "fixtureId": "minimal-ptp-lin-valid-v1",
+  "classification": "GoldenPath",
+  "provenance": "LabSynthetic",
+  "nativeExpectation": "CompileAccepted",
+  "nativeEvidenceStatus": "SyntaxSelectionValidated",
+  "nativeEvidenceReference": "WP4K-20260828-NATIVE-KSS-02",
+  "executionExpectation": "BoundedVirtualExecutionExpected",
+  "motionProviderPreference": [
+    "Integrated",
+    "RCS8.7"
+  ],
+  "controllerTarget": {
+    "vendor": "KUKA",
+    "kssVersion": "8.7.8 B671",
+    "robotModel": "#KR210R2700_2 C01 FLR",
+    "robotEvidence": "ControllerProjectBaselineWP4TAndExactComponentWP4V",
+    "controllerModel": "KRC5",
+    "kukaSimComponentSha256": "9717CF4C0A1FD74E8D293E4D5B0E3D90D54406181D686E69AB47D3FD84DF9C65",
+    "officeLiteScope": "GenericKssSemanticsOnlyNotExactC01Kinematics"
+  },
+  "frames": {
+    "toolNumber": 0,
+    "baseNumber": 0,
+    "loadDeclaration": "ControllerDefaultLoadNotRealCellEvidence",
+    "provenance": "LabDeclared"
+  },
+  "files": [
+    {
+      "relativePath": "controller-files/LAB_MINIMAL.dat",
+      "bytes": 331,
+      "sha256": "5EEB76FDC7ECB305D464B9E7D2BCD7834EF96C6DD6852DD1B03405782526502F",
+      "encoding": "Ascii7Bit",
+      "lineEnding": "Lf"
+    },
+    {
+      "relativePath": "controller-files/LAB_MINIMAL.src",
+      "bytes": 551,
+      "sha256": "646D9E216E7E974BADD3C88A067E9E6BBEDF429D0233851C6304ABD5261E07F0",
+      "encoding": "Ascii7Bit",
+      "lineEnding": "Lf"
+    }
+  ],
+  "correlations": [
+    {
+      "sequence": 1,
+      "operationId": "op-home",
+      "targetId": "target-home",
+      "motionType": "PTP",
+      "krlSymbol": "A_HOME",
+      "file": "controller-files/LAB_MINIMAL.src",
+      "line": 24
+    },
+    {
+      "sequence": 2,
+      "operationId": "op-start",
+      "targetId": "target-start",
+      "motionType": "PTP",
+      "krlSymbol": "P_START",
+      "file": "controller-files/LAB_MINIMAL.src",
+      "line": 25
+    },
+    {
+      "sequence": 3,
+      "operationId": "op-line",
+      "targetId": "target-end",
+      "motionType": "LIN",
+      "krlSymbol": "P_END",
+      "file": "controller-files/LAB_MINIMAL.src",
+      "line": 27
+    }
+  ],
+  "expectedAssertions": [
+    "Controller artifacts remain byte-identical to this manifest",
+    "Accepted WP4K evidence reports no attributable KSS error for these exact valid bytes",
+    "The neutral PTP $AXIS_ACT target must satisfy BCO without requesting physical displacement",
+    "9B must prove bounded native KSS execution without claiming exact C01 kinematics",
+    "9C must preserve commanded target order A_HOME, P_START, P_END on the exact C01 model"
+  ],
+  "expectedDiagnostic": null,
+  "safety": {
+    "classification": "VirtualOnlyNoSecrets",
+    "redactionConfirmed": true,
+    "physicalMotionAllowed": false
+  }
+}
