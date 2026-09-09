@@ -56,7 +56,6 @@ The two commands above are the complete file-only path. Install the SDK version 
 
 See [contributing](CONTRIBUTING.md) for the pinned refresh contract and [the playbook](docs/playbook/README.md) for source-audited lessons.
 
-The design choices and comparable open-source projects are documented in [Competitive landscape](docs/competitive-landscape.md).
 
 ## Tests and releases
 
