@@ -1,5 +1,7 @@
 # kuka-validation-lab — verifiable evidence for LLM agents
 
+[![CI](https://github.com/jackxxh/kuka-validation-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/jackxxh/kuka-validation-lab/actions/workflows/ci.yml) [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 [简体中文](README.zh-CN.md)
 
 When an agent says “I verified this with an external tool”, this project turns that claim into a receipt another process can verify offline. The chain preserves the exact candidate bytes, hashes every input, records the check outcome, and rejects tampered receipts. KUKA is the reference adapter; the evidence pattern is the product.
@@ -12,6 +14,8 @@ dotnet run --project src/KukaLab.Cli -- receipt verify --receipt .local/receipt.
 ```
 
 The first command emits a receipt for the synthetic `DEMO.SRC`/`DEMO.DAT` pair. The second recomputes the receipt hash and reports `succeeded: true`. Edit either file and repeat the commands to see the candidate identity change. This demo proves file integrity and pairing only; it does not claim robot execution or safety.
+
+**Why this exists:** an agent can say “the simulator passed” while giving you no replayable evidence. This project makes the evidence object inspectable, hash-bound and fail-closed. Start with [the file-only example](samples/README.md), then read the [playbook](docs/playbook/README.md) before enabling vendor adapters.
 
 The pinned importer snapshot is buildable with the .NET SDK version in `global.json`; vendor-dependent paths remain opt-in.
 
@@ -51,6 +55,8 @@ The two commands above are the complete file-only path. Install the SDK version 
 | Importer only | `src/`, `tests/`, `tools/`, `plugins/`, `IMPORT_MANIFEST.json` |
 
 See [contributing](CONTRIBUTING.md) for the pinned refresh contract and [the playbook](docs/playbook/README.md) for source-audited lessons.
+
+The design choices and comparable open-source projects are documented in [Competitive landscape](docs/competitive-landscape.md).
 
 ## Tests and releases
 
