@@ -16,6 +16,14 @@ node scripts/validate-profile.mjs profiles/example.json
 
 The command is offline and prints a stable SHA-256 identity for the exact profile bytes. Runtime adapters will use this same identity when profile support is enabled.
 
+Probe configured capabilities without starting vendor software:
+
+```powershell
+node scripts/probe-profile.mjs profiles/example.json
+```
+
+The probe reports `Ready`, `Missing`, or `NotRun` for each declared adapter and exits non-zero when an enabled adapter's root path is missing. It never reads license files or contacts a controller.
+
 ## Compatibility matrix
 
 | Installed software | Usable capabilities | Evidence boundary |
