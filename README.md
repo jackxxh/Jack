@@ -68,3 +68,5 @@ The tag-triggered Windows workflow builds the CLI and packages it with the plugi
 No physical-controller operations are in scope. `NotRun`, `Blocked`, `Unsupported`, `Cancelled` and `Inconclusive` must never be presented as successful execution. Generalizing the evidence core is frozen until a second real domain adapter exists; no speculative framework extraction is planned.
 
 See [security](SECURITY.md). Project-authored material is provided under the [MIT license](LICENSE); third-party material retains its applicable license.
+
+Configure a machine with [an environment profile](docs/profile-guide.md) before using a vendor adapter.

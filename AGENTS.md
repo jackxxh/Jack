@@ -10,7 +10,7 @@ If progress would require a source workspace change, stop and report the exact d
 
 ## One file, one writer
 
-- Handwritten: root README files, LICENSE, SECURITY.md, CONTRIBUTING.md, AGENTS.md, .gitignore, .gitattributes, .github/, docs/playbook/, samples/ and scripts/import-from-lab.mjs.
+- Handwritten: root README files, LICENSE, SECURITY.md, CONTRIBUTING.md, AGENTS.md, .gitignore, .gitattributes, .github/, docs/playbook/, docs/profile-guide.md, profiles/, samples/ and scripts/import-from-lab.mjs.
 - Generated: src/, tests/, tools/, plugins/ and IMPORT_MANIFEST.json. Only the importer may create, replace or remove files here. Never apply manual fixes, formatting or placeholders to generated files.
 - Keep generated build output ignored. Do not commit obj/, bin/ or node_modules/.
 - A portability change must be a narrow, explicit, audited importer transformation that preserves behavior and records source and output identity. If it cannot preserve behavior, stop for a human decision. Never patch the private source to facilitate publication.

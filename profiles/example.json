@@ -1,0 +1,16 @@
+{
+  "id": "my-kuka-lab",
+  "platform": "windows",
+  "software": {
+    "kukaSim": {"enabled": true, "version": "4.10", "pathKey": "kukaSimRoot"},
+    "officeLite": {"enabled": true, "version": "8.7.8", "build": "B671", "pathKey": "officeLiteRoot"},
+    "workVisual": {"enabled": true, "version": "6.x", "pathKey": "workVisualRoot"}
+  },
+  "paths": {
+    "kukaSimRoot": "C:/Program Files/KUKA/KUKA.Sim 4.10",
+    "officeLiteRoot": "D:/KUKA/OfficeLite",
+    "workVisualRoot": "C:/Program Files/KUKA/WorkVisual"
+  },
+  "capabilities": ["kukasim.simulation", "officelite.native-kss", "workvisual.read-only"],
+  "metadata": {"owner": "replace-me", "notes": "Example only; never commit licenses or VM images."}
+}
