@@ -1,8 +1,17 @@
-# kuka-validation-lab
+# kuka-validation-lab — verifiable evidence for LLM agents
 
 [简体中文](README.zh-CN.md)
 
-Turn an LLM agent's claim that “I verified this with an external tool” into hash-bound evidence that another process can verify offline. This repository demonstrates an agent verification pattern: preserve the exact candidate, record the scope and outcome of a check, then re-verify the receipt before accepting the claim. KUKA is the first reference adapter. A receipt establishes the integrity and recorded scope of evidence; a hash alone does not authenticate a tool or prove that execution occurred.
+When an agent says “I verified this with an external tool”, this project turns that claim into a receipt another process can verify offline. The chain preserves the exact candidate bytes, hashes every input, records the check outcome, and rejects tampered receipts. KUKA is the reference adapter; the evidence pattern is the product.
+
+**Try it in two commands:**
+
+```powershell
+dotnet run --project src/KukaLab.Cli -- krl candidate-intake --source samples/raw-krl --output .local/receipt.json
+dotnet run --project src/KukaLab.Cli -- receipt verify --receipt .local/receipt.json
+```
+
+The first command emits a receipt for the synthetic `DEMO.SRC`/`DEMO.DAT` pair. The second recomputes the receipt hash and reports `succeeded: true`. Edit either file and repeat the commands to see the candidate identity change. This demo proves file integrity and pairing only; it does not claim robot execution or safety.
 
 The pinned importer snapshot is buildable with the .NET SDK version in `global.json`; vendor-dependent paths remain opt-in.
 
@@ -32,12 +41,7 @@ Exact vendor versions, assets and prerequisites will be documented after import 
 
 ## Quickstart — no KUKA software
 
-```powershell
-dotnet run --project src/KukaLab.Cli -- krl candidate-intake --source samples/raw-krl --output .local/receipt.json
-dotnet run --project src/KukaLab.Cli -- receipt verify --receipt .local/receipt.json
-```
-
-This verifies intake, exact SRC/DAT hashes and receipt integrity. It does not claim static readiness or vendor execution.
+The two commands above are the complete file-only path. Install the SDK version in `global.json`, then run them from a clean checkout. No KUKA software, license or network service is needed.
 
 ## Repository ownership
 
