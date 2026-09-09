@@ -24,6 +24,14 @@ node scripts/probe-profile.mjs profiles/example.json
 
 The probe reports `Ready`, `Missing`, or `NotRun` for each declared adapter and exits non-zero when an enabled adapter's root path is missing. It never reads license files or contacts a controller.
 
+Use the same profile as a guard for a CLI operation:
+
+```powershell
+node scripts/kuka-profile-run.mjs --profile profiles/example.json krl candidate-intake --source samples/raw-krl --output .local/receipt.json
+```
+
+The wrapper validates and probes first, then forwards the remaining arguments unchanged to the CLI. MCP clients can apply the same sequence before invoking a vendor operation.
+
 ## Compatibility matrix
 
 | Installed software | Usable capabilities | Evidence boundary |
