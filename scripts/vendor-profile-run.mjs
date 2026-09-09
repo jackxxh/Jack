@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
-import { loadProfile, probeProfile } from './profile-lib.mjs';
+import { loadProfile, probeProfile, createBinding } from './profile-lib.mjs';
 
 const args = process.argv.slice(2);
 const profileIndex = args.indexOf('--profile');
@@ -38,5 +38,13 @@ fs.writeFileSync(temp, script);
 try {
   const forwarded = args.filter((_, index) => index !== profileIndex && index !== profileIndex + 1);
   const result = spawnSync('powershell.exe', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', temp, ...forwarded], { cwd: root, stdio: 'inherit' });
+  const receiptIndex = forwarded.findIndex(value => value.toLowerCase() === '-receipt');
+  if (result.status === 0 && receiptIndex >= 0 && forwarded[receiptIndex + 1]) {
+    const receiptPath = path.resolve(root, forwarded[receiptIndex + 1]);
+    if (fs.existsSync(receiptPath)) {
+      const binding = createBinding(snapshot, probe, fs.readFileSync(receiptPath), forwarded, result.status);
+      fs.writeFileSync(`${receiptPath}.profile.json`, JSON.stringify(binding, null, 2) + '\n');
+    }
+  }
   process.exitCode = result.status ?? 1;
 } finally { fs.rmSync(temp, { force: true }); }
