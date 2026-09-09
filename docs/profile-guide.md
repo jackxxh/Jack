@@ -34,6 +34,14 @@ The wrapper validates and probes first, then forwards the remaining arguments un
 
 The MCP server also exposes `kuka_lab_profile_probe`. Configure any stdio-capable client with the server command from `plugins/kuka-virtual-validation/mcp-server/package.json`, then call that tool with the profile path. The tool is read-only and returns the same `Ready`-equivalent `Unverified`, `Missing`, `NotRun` and `UnsupportedPlatform` vocabulary used by the local probe.
 
+For the Windows exact-C01 PowerShell adapter, run through the profile runner:
+
+```powershell
+node scripts/vendor-profile-run.mjs --profile profiles/my-machine.json -Action Preflight
+```
+
+The runner creates an ignored temporary script, replaces the reference software roots with profile values, points the adapter at the public checkout, and deletes the temporary script after exit. It does not modify generated files. The adapter still requires the user's licensed KUKA.Sim/OfficeLite assets and remains bounded by its receipt contract.
+
 Example generic MCP client configuration:
 
 ```json
