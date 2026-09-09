@@ -8,6 +8,14 @@ The `version` and optional `build` fields are evidence inputs. Adapter output re
 
 The profile is intentionally separate from AI clients. An MCP client supplies the profile path when starting the server; clients that cannot use MCP can call the equivalent CLI command with the same profile. No client is allowed to provide credentials, license contents or physical-controller commands through this configuration.
 
+Validate a profile before using it:
+
+```powershell
+node scripts/validate-profile.mjs profiles/example.json
+```
+
+The command is offline and prints a stable SHA-256 identity for the exact profile bytes. Runtime adapters will use this same identity when profile support is enabled.
+
 ## Compatibility matrix
 
 | Installed software | Usable capabilities | Evidence boundary |
