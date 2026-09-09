@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
   "sourceCommit": "82875914ed984e4f78d7c282680a83653417bde0",
-  "sourceCommitRequested": "63e9ca28^",
+  "sourceCommitRequested": "82875914ed984e4f78d7c282680a83653417bde0",
   "sourcePolicy": "pinned archive mechanical project closure within 04_kuka_lab",
   "excluded": [
     {
@@ -219,8 +219,8 @@
       "source": "04_kuka_lab/plugins/kuka-virtual-validation/mcp-server/src/server.mjs",
       "target": "plugins/kuka-virtual-validation/mcp-server/src/server.mjs",
       "sourceSha256": "812d99091c3b2172c141d85891f1dfedc9a15a8be4adbe20ecf7b99ff3ac33e9",
-      "sha256": "0bd2ef1975dabce0942e444051fa4517a7f13012860f95fb3e3d3d7962823e09",
-      "bytes": 46630,
+      "sha256": "b4c31eda96e4e55188ee7c9fc8b404032deabbc6f3b2cfcaffd72f7030abb9a2",
+      "bytes": 57297,
       "transformations": [
         {
           "id": "profile-mcp-tool",

@@ -22,7 +22,7 @@ Probe configured capabilities without starting vendor software:
 node scripts/probe-profile.mjs profiles/example.json
 ```
 
-The probe reports `Ready`, `Missing`, or `NotRun` for each declared adapter and exits non-zero when an enabled adapter's root path is missing. It never reads license files or contacts a controller.
+The probe reports `Unverified`, `Missing`, `Inaccessible`, `UnsupportedPlatform`, or `NotRun` for each declared adapter and exits non-zero when an enabled adapter's root path is missing. `Unverified` only means that the configured directory exists; it never reads license files, claims a version, or contacts a controller.
 
 Use the same profile as a guard for a CLI operation:
 
@@ -32,7 +32,13 @@ node scripts/kuka-profile-run.mjs --profile profiles/example.json krl candidate-
 
 The wrapper validates and probes first, then forwards the remaining arguments unchanged to the CLI. When the command writes a receipt, it writes a companion `.profile.json` evidence file so existing receipt verifiers remain byte-compatible. MCP clients can apply the same sequence before invoking a vendor operation.
 
-The MCP server also exposes `kuka_lab_profile_probe`. Configure any stdio-capable client with the server command from `plugins/kuka-virtual-validation/mcp-server/package.json`, then call that tool with the profile path. The tool is read-only and returns the same `Ready`-equivalent `Unverified`, `Missing`, `NotRun` and `UnsupportedPlatform` vocabulary used by the local probe.
+The MCP server also exposes `kuka_lab_profile_probe`. Configure any stdio-capable client with the server command from `plugins/kuka-virtual-validation/mcp-server/package.json`, then call that tool with the profile path. The tool is read-only and returns the same `Unverified`, `Missing`, `NotRun` and `UnsupportedPlatform` vocabulary used by the local probe.
+
+To inspect all enabled single, pair, and triple combinations:
+
+```powershell
+node scripts/profile-capability-matrix.mjs profiles/my-machine.json
+```
 
 For the Windows exact-C01 PowerShell adapter, run through the profile runner:
 

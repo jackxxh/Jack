@@ -69,4 +69,4 @@ No physical-controller operations are in scope. `NotRun`, `Blocked`, `Unsupporte
 
 See [security](SECURITY.md). Project-authored material is provided under the [MIT license](LICENSE); third-party material retains its applicable license.
 
-Configure a machine with [an environment profile](docs/profile-guide.md) before using a vendor adapter.
+Configure a machine with [an environment profile](docs/profile-guide.md) before using a vendor adapter. See the [integration matrix](docs/integration-matrix.md) for single-software, paired-software, and AI client use.

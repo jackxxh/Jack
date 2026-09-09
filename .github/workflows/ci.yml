@@ -25,3 +25,6 @@ jobs:
       - run: node --check scripts/profile-lib.mjs
       - run: node --check scripts/kuka-profile-run.mjs
       - run: node --check scripts/vendor-profile-run.mjs
+      - run: node --check scripts/profile-commands.mjs
+      - run: node --check scripts/profile-mcp-tools.mjs
+      - run: node --test scripts/profile.test.mjs
