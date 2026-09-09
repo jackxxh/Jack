@@ -19,4 +19,15 @@ const probe = spawnSync(process.execPath, [path.join(root, 'scripts', 'probe-pro
 if (probe.status !== 0) process.exit(probe.status ?? 1);
 const forwarded = args.filter((_, i) => i !== p && i !== p + 1);
 const cli = spawnSync('dotnet', ['run', '--project', path.join(root, 'src', 'KukaLab.Cli'), '--', ...forwarded], { stdio: 'inherit', cwd: root });
+const outputFlag = forwarded.indexOf('--output');
+if (cli.status === 0 && outputFlag >= 0 && forwarded[outputFlag + 1]) {
+  const receiptPath = path.resolve(root, forwarded[outputFlag + 1]);
+  if (fs.existsSync(receiptPath)) {
+    const receipt = JSON.parse(fs.readFileSync(receiptPath, 'utf8'));
+    const profileData = JSON.parse(fs.readFileSync(profile, 'utf8'));
+    const profileSha256 = (await import('node:crypto')).default.createHash('sha256').update(fs.readFileSync(profile)).digest('hex').toUpperCase();
+    receipt.profile = { id: profileData.id, sha256: profileSha256, software: profileData.software, capabilityProbe: 'passed' };
+    fs.writeFileSync(receiptPath, JSON.stringify(receipt, null, 2) + '\n');
+  }
+}
 process.exit(cli.status ?? 1);

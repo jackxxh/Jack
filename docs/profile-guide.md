@@ -30,7 +30,7 @@ Use the same profile as a guard for a CLI operation:
 node scripts/kuka-profile-run.mjs --profile profiles/example.json krl candidate-intake --source samples/raw-krl --output .local/receipt.json
 ```
 
-The wrapper validates and probes first, then forwards the remaining arguments unchanged to the CLI. MCP clients can apply the same sequence before invoking a vendor operation.
+The wrapper validates and probes first, then forwards the remaining arguments unchanged to the CLI. When the command writes a receipt, it adds a top-level profile identity and capability snapshot while preserving the CLI payload hash. MCP clients can apply the same sequence before invoking a vendor operation.
 
 ## Compatibility matrix
 
